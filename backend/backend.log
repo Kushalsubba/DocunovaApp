@@ -1,0 +1,1624 @@
+2026-05-06 15:30:47,962 INFO sqlalchemy.engine.Engine select pg_catalog.version()
+2026-05-06 15:30:47,962 INFO sqlalchemy.engine.Engine [raw sql] {}
+2026-05-06 15:30:47,962 INFO sqlalchemy.engine.Engine select current_schema()
+2026-05-06 15:30:47,962 INFO sqlalchemy.engine.Engine [raw sql] {}
+2026-05-06 15:30:47,962 INFO sqlalchemy.engine.Engine show standard_conforming_strings
+2026-05-06 15:30:47,962 INFO sqlalchemy.engine.Engine [raw sql] {}
+2026-05-06 15:30:47,963 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:30:47,964 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-05-06 15:30:47,964 INFO sqlalchemy.engine.Engine [generated in 0.00009s] {'table_name': 'users', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-05-06 15:30:47,965 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-05-06 15:30:47,965 INFO sqlalchemy.engine.Engine [cached since 0.0006793s ago] {'table_name': 'documents', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-05-06 15:30:47,965 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-05-06 15:30:47,965 INFO sqlalchemy.engine.Engine [cached since 0.0008764s ago] {'table_name': 'metadata', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-05-06 15:30:47,965 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-05-06 15:30:47,965 INFO sqlalchemy.engine.Engine [cached since 0.001083s ago] {'table_name': 'search_index', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-05-06 15:30:47,965 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-05-06 15:30:47,965 INFO sqlalchemy.engine.Engine [cached since 0.001251s ago] {'table_name': 'scan_logs', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-05-06 15:30:47,966 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_type.typname 
+FROM pg_catalog.pg_type JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_type.typnamespace 
+WHERE pg_catalog.pg_type.typname = %(typname_1)s AND pg_catalog.pg_type_is_visible(pg_catalog.pg_type.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-05-06 15:30:47,966 INFO sqlalchemy.engine.Engine [generated in 0.00008s] {'typname_1': 'user_role', 'nspname_1': 'pg_catalog'}
+2026-05-06 15:30:47,966 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_type.typname 
+FROM pg_catalog.pg_type JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_type.typnamespace 
+WHERE pg_catalog.pg_type.typname = %(typname_1)s AND pg_catalog.pg_type_is_visible(pg_catalog.pg_type.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-05-06 15:30:47,966 INFO sqlalchemy.engine.Engine [cached since 0.0004161s ago] {'typname_1': 'document_status', 'nspname_1': 'pg_catalog'}
+2026-05-06 15:30:47,967 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_type.typname 
+FROM pg_catalog.pg_type JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_type.typnamespace 
+WHERE pg_catalog.pg_type.typname = %(typname_1)s AND pg_catalog.pg_type_is_visible(pg_catalog.pg_type.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-05-06 15:30:47,967 INFO sqlalchemy.engine.Engine [cached since 0.0007313s ago] {'typname_1': 'scan_action', 'nspname_1': 'pg_catalog'}
+2026-05-06 15:30:47,967 INFO sqlalchemy.engine.Engine COMMIT
+2026-05-06 15:30:47,968 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:30:47,969 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:30:47,969 INFO sqlalchemy.engine.Engine [generated in 0.00006s] {'username_1': 'admin', 'param_1': 1}
+2026-05-06 15:30:48,133 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:30:48,133 INFO sqlalchemy.engine.Engine [cached since 0.1644s ago] {'username_1': 'user', 'param_1': 1}
+2026-05-06 15:30:48,300 INFO sqlalchemy.engine.Engine UPDATE users SET password_hash=%(password_hash)s WHERE users.id = %(users_id)s::UUID
+2026-05-06 15:30:48,300 INFO sqlalchemy.engine.Engine [generated in 0.00012s] [{'password_hash': '$2b$12$BLRabmQ8au.vTme5IMXaaem9Ot4eFBa6bXlpWpSh5/A58FojYkY7y', 'users_id': UUID('2bdb1435-c5a5-4610-b0a6-28337b69a1ca')}, {'password_hash': '$2b$12$VLrzCneuJPxDRyjZarhr3OE6K0FFC0/XDciJXQxxWJkjecjAtsBuG', 'users_id': UUID('f3b288eb-6f9a-4fb7-9d84-fda9a80e086d')}]
+2026-05-06 15:30:48,301 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Started server process [352419]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53424 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53430 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53438 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:31:03,836 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:31:03,837 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:31:03,837 INFO sqlalchemy.engine.Engine [generated in 0.00006s] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:53450 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:31:03,837 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:31:03,838 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:31:03,838 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:31:03,838 INFO sqlalchemy.engine.Engine [cached since 0.001875s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:53450 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:31:03,839 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:53450 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53438 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53430 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53456 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:31:03,846 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:31:03,846 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:31:03,846 INFO sqlalchemy.engine.Engine [cached since 0.009347s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:31:03,848 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:31:03,848 INFO sqlalchemy.engine.Engine [generated in 0.00013s] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:53472 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:31:03,857 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:31:03,859 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:31:03,859 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:31:03,859 INFO sqlalchemy.engine.Engine [cached since 0.02205s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:31:03,859 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:31:03,859 INFO sqlalchemy.engine.Engine [cached since 0.01102s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:53472 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:31:03,863 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:31:03,864 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:31:03,865 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:31:03,865 INFO sqlalchemy.engine.Engine [cached since 0.02798s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:31:03,865 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:31:03,865 INFO sqlalchemy.engine.Engine [cached since 0.01724s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:53472 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:31:03,872 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:31:03,874 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:31:03,874 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:31:03,874 INFO sqlalchemy.engine.Engine [cached since 0.03733s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:31:03,875 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:31:03,875 INFO sqlalchemy.engine.Engine [cached since 0.02679s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:53472 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:31:03,882 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:57160 - "GET /health HTTP/1.1" 200 OK
+2026-05-06 15:33:45,761 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:33:45,761 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:33:45,761 INFO sqlalchemy.engine.Engine [cached since 161.9s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:37658 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:33:45,762 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:33:45,764 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:33:45,764 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:33:45,764 INFO sqlalchemy.engine.Engine [cached since 161.9s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:37658 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:33:45,764 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:33:45,770 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:33:45,770 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:33:45,770 INFO sqlalchemy.engine.Engine [cached since 161.9s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:33:45,771 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:33:45,771 INFO sqlalchemy.engine.Engine [cached since 161.9s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37658 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:33:45,776 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:33:45,777 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:33:45,777 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:33:45,777 INFO sqlalchemy.engine.Engine [cached since 161.9s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:33:45,778 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:33:45,778 INFO sqlalchemy.engine.Engine [cached since 161.9s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37658 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:33:45,783 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:33:45,785 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:33:45,785 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:33:45,785 INFO sqlalchemy.engine.Engine [cached since 161.9s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:33:45,786 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:33:45,786 INFO sqlalchemy.engine.Engine [cached since 161.9s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37658 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:33:45,790 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:33:45,792 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:33:45,792 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:33:45,792 INFO sqlalchemy.engine.Engine [cached since 162s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:33:45,792 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:33:45,792 INFO sqlalchemy.engine.Engine [cached since 161.9s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37658 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:33:45,796 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:44322 - "GET /health HTTP/1.1" 200 OK
+2026-05-06 15:40:17,462 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:40:17,462 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:40:17,462 INFO sqlalchemy.engine.Engine [cached since 569.5s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:48414 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:40:17,630 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:41:21,339 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:21,339 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:41:21,339 INFO sqlalchemy.engine.Engine [cached since 633.4s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:51690 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:41:21,509 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:41:34,571 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:34,571 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:34,571 INFO sqlalchemy.engine.Engine [cached since 630.7s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:41:34,572 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:41:34,572 INFO sqlalchemy.engine.Engine [cached since 630.7s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:34994 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:41:34,577 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:41:34,582 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:34,582 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:34,582 INFO sqlalchemy.engine.Engine [cached since 630.7s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:41:34,583 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:41:34,583 INFO sqlalchemy.engine.Engine [cached since 630.7s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:35006 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:41:34,589 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:41:34,599 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:34,599 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:34,599 INFO sqlalchemy.engine.Engine [cached since 630.8s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:41:34,616 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:34,616 INFO sqlalchemy.engine.Engine [generated in 0.00010s] {'id_1': 'f511397c-76bb-44fe-a154-cf1c9e4e21a6', 'param_1': 1}
+INFO:     127.0.0.1:35012 - "POST /api/search HTTP/1.1" 200 OK
+2026-05-06 15:41:38,026 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:41:38,032 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:38,032 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:38,032 INFO sqlalchemy.engine.Engine [cached since 634.2s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:48786 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:41:38,937 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:41:41,195 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:41,195 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:41:41,195 INFO sqlalchemy.engine.Engine [cached since 653.2s ago] {'username_1': 'user', 'param_1': 1}
+INFO:     127.0.0.1:48798 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:41:41,362 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:41:51,364 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:51,365 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:51,365 INFO sqlalchemy.engine.Engine [cached since 647.5s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:56604 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:41:51,368 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:41:51,379 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:51,380 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:51,380 INFO sqlalchemy.engine.Engine [cached since 647.5s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:41:51,402 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:51,402 INFO sqlalchemy.engine.Engine [cached since 16.79s ago] {'id_1': 'f511397c-76bb-44fe-a154-cf1c9e4e21a6', 'param_1': 1}
+INFO:     127.0.0.1:56606 - "POST /api/search HTTP/1.1" 200 OK
+2026-05-06 15:41:54,120 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:41:54,127 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:54,127 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:54,127 INFO sqlalchemy.engine.Engine [cached since 650.3s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+RAG chat error: No module named 'pymilvus'
+2026-05-06 15:41:55,164 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:56616 - "POST /api/chat/rag HTTP/1.1" 500 Internal Server Error
+2026-05-06 15:41:55,206 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:41:55,206 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:41:55,206 INFO sqlalchemy.engine.Engine [cached since 651.4s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:41:55,207 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:56622 - "GET /api/documents HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:56626 - "GET /api/documents HTTP/1.1" 401 Unauthorized
+2026-05-06 15:42:07,118 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:42:07,118 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:42:07,118 INFO sqlalchemy.engine.Engine [cached since 663.3s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+RAG chat error: No module named 'pymilvus'
+2026-05-06 15:42:07,135 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:48972 - "POST /api/chat/rag HTTP/1.1" 500 Internal Server Error
+2026-05-06 15:42:07,150 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:42:07,150 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:42:07,150 INFO sqlalchemy.engine.Engine [cached since 663.3s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:48988 - "POST /api/admin/reextract HTTP/1.1" 200 OK
+2026-05-06 15:42:07,155 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:42:07,155 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents
+2026-05-06 15:42:07,155 INFO sqlalchemy.engine.Engine [generated in 0.00007s] {}
+2026-05-06 15:42:07,161 INFO sqlalchemy.engine.Engine COMMIT
+Re-extraction complete: 0 documents updated
+2026-05-06 15:42:07,161 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:42:50,975 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:42:50,975 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:42:50,975 INFO sqlalchemy.engine.Engine [cached since 707.1s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+RAG chat error: No module named 'pymilvus'
+2026-05-06 15:42:51,004 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:37596 - "POST /api/chat/rag HTTP/1.1" 500 Internal Server Error
+2026-05-06 15:42:51,009 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:42:51,010 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:42:51,010 INFO sqlalchemy.engine.Engine [cached since 723s ago] {'username_1': 'user', 'param_1': 1}
+INFO:     127.0.0.1:37600 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:42:51,180 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:44:38,091 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:44:38,091 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:44:38,091 INFO sqlalchemy.engine.Engine [cached since 830.1s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:42768 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:44:38,257 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:44:38,264 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:44:38,264 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:44:38,264 INFO sqlalchemy.engine.Engine [cached since 814.4s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+RAG chat error: No module named 'pymilvus'
+2026-05-06 15:44:39,354 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:42784 - "POST /api/chat/rag HTTP/1.1" 500 Internal Server Error
+2026-05-06 15:45:57,199 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:45:57,200 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:45:57,200 INFO sqlalchemy.engine.Engine [cached since 893.4s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:48638 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:45:59,725 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:46:10,135 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:46:10,136 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:46:10,136 INFO sqlalchemy.engine.Engine [cached since 906.3s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+/home/ashok/anaconda3/lib/python3.13/site-packages/milvus_lite/__init__.py:15: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import DistributionNotFound, get_distribution
+INFO:     127.0.0.1:57454 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:46:20,194 INFO sqlalchemy.engine.Engine ROLLBACK
+I0506 15:48:22.077573  370561 chttp2_transport.cc:1369] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {http2_error:11, grpc_status:14}
+E0506 15:48:22.077874  370561 chttp2_transport.cc:1401] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+INFO:     127.0.0.1:35088 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:49:09,854 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:49:09,854 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:49:09,854 INFO sqlalchemy.engine.Engine [cached since 1086s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:35088 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:49:09,855 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:49:09,855 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:49:09,856 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:49:09,856 INFO sqlalchemy.engine.Engine [cached since 1086s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:35088 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:49:09,856 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:49:11,974 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:49:11,974 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:49:11,974 INFO sqlalchemy.engine.Engine [cached since 1088s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:35088 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:49:11,975 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:49:11,976 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:49:11,976 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:49:11,976 INFO sqlalchemy.engine.Engine [cached since 1088s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:35088 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:49:11,977 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:18,645 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:18,645 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:18,645 INFO sqlalchemy.engine.Engine [cached since 1215s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:46512 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:18,646 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:18,647 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:18,647 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:18,647 INFO sqlalchemy.engine.Engine [cached since 1215s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:46512 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:18,648 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:23,259 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:23,259 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:23,259 INFO sqlalchemy.engine.Engine [cached since 1219s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:46512 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:23,260 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:23,261 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:23,261 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:23,261 INFO sqlalchemy.engine.Engine [cached since 1219s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:46512 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:23,262 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:23,368 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:23,368 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:23,368 INFO sqlalchemy.engine.Engine [cached since 1220s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:46512 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:23,369 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:23,370 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:23,370 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:23,370 INFO sqlalchemy.engine.Engine [cached since 1220s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:46512 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:23,371 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:25,359 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:25,359 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:25,359 INFO sqlalchemy.engine.Engine [cached since 1222s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:46512 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:25,359 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:25,360 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:25,360 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:25,360 INFO sqlalchemy.engine.Engine [cached since 1222s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:46512 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:25,361 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:31,976 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:31,976 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:31,976 INFO sqlalchemy.engine.Engine [cached since 1228s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:56116 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:31,977 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:31,978 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:31,978 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:31,978 INFO sqlalchemy.engine.Engine [cached since 1228s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:56116 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 15:51:31,979 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:56116 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:51:31,982 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:31,982 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:31,982 INFO sqlalchemy.engine.Engine [cached since 1228s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:51:31,983 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:51:31,983 INFO sqlalchemy.engine.Engine [cached since 1228s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:56116 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:51:31,988 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:51:31,989 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:51:31,989 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:51:31,989 INFO sqlalchemy.engine.Engine [cached since 1228s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:51:31,989 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:51:31,989 INFO sqlalchemy.engine.Engine [cached since 1228s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:56116 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:51:31,992 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:09,771 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:09,771 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:52:09,771 INFO sqlalchemy.engine.Engine [cached since 1282s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:60638 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:52:09,943 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:09,961 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:09,961 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:09,961 INFO sqlalchemy.engine.Engine [cached since 1266s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:60644 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:52:12,378 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:12,396 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:12,396 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:12,396 INFO sqlalchemy.engine.Engine [cached since 1269s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:52:12,429 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:12,429 INFO sqlalchemy.engine.Engine [cached since 637.8s ago] {'id_1': 'f511397c-76bb-44fe-a154-cf1c9e4e21a6', 'param_1': 1}
+INFO:     127.0.0.1:60660 - "POST /api/search HTTP/1.1" 200 OK
+2026-05-06 15:52:15,278 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:15,279 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:15,279 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:52:15,279 INFO sqlalchemy.engine.Engine [cached since 1287s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:60664 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:52:15,445 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:15,467 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:15,467 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:15,467 INFO sqlalchemy.engine.Engine [cached since 1272s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:60674 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:52:16,968 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:16,985 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:16,985 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:16,985 INFO sqlalchemy.engine.Engine [cached since 1273s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:52:17,008 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:17,008 INFO sqlalchemy.engine.Engine [cached since 642.4s ago] {'id_1': 'f511397c-76bb-44fe-a154-cf1c9e4e21a6', 'param_1': 1}
+INFO:     127.0.0.1:49402 - "POST /api/search HTTP/1.1" 200 OK
+2026-05-06 15:52:19,616 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:19,632 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:19,632 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:52:19,632 INFO sqlalchemy.engine.Engine [cached since 1292s ago] {'username_1': 'user', 'param_1': 1}
+INFO:     127.0.0.1:49412 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:52:19,806 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:19,823 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:19,823 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:19,824 INFO sqlalchemy.engine.Engine [cached since 1276s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:52:19,824 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:49420 - "GET /api/documents HTTP/1.1" 403 Forbidden
+2026-05-06 15:52:19,828 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:19,829 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:19,829 INFO sqlalchemy.engine.Engine [cached since 1276s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:52:19,842 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:19,842 INFO sqlalchemy.engine.Engine [cached since 645.2s ago] {'id_1': 'f511397c-76bb-44fe-a154-cf1c9e4e21a6', 'param_1': 1}
+INFO:     127.0.0.1:49432 - "POST /api/search HTTP/1.1" 200 OK
+2026-05-06 15:52:21,858 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:21,859 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:21,859 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:52:21,859 INFO sqlalchemy.engine.Engine [cached since 1294s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:49440 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:52:22,023 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:22,046 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:22,046 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:22,046 INFO sqlalchemy.engine.Engine [cached since 1278s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:52:23,135 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:23,135 INFO sqlalchemy.engine.Engine [cached since 648.5s ago] {'id_1': 'f511397c-76bb-44fe-a154-cf1c9e4e21a6', 'param_1': 1}
+INFO:     127.0.0.1:49452 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:52:26,710 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:53568 - "GET /health HTTP/1.1" 200 OK
+2026-05-06 15:52:28,009 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:28,010 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:52:28,010 INFO sqlalchemy.engine.Engine [cached since 1300s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:53580 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:52:28,179 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:52:28,201 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:52:28,201 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:52:28,201 INFO sqlalchemy.engine.Engine [cached since 1284s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:53596 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:52:45,011 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:33426 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46874 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:53:16,693 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:53:16,694 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:53:16,694 INFO sqlalchemy.engine.Engine [cached since 1349s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:46882 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:53:16,866 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:46882 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46874 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:53:16,874 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:53:16,874 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:53:16,874 INFO sqlalchemy.engine.Engine [cached since 1333s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:53:16,875 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:53:16,875 INFO sqlalchemy.engine.Engine [cached since 1333s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:46888 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:53:16,879 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:53:16,880 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:53:16,880 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:53:16,880 INFO sqlalchemy.engine.Engine [cached since 1333s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:53:16,881 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:53:16,881 INFO sqlalchemy.engine.Engine [cached since 1333s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:46888 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:53:16,885 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:59744 - "OPTIONS /api/documents/upload HTTP/1.1" 200 OK
+2026-05-06 15:53:36,248 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:53:36,248 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:53:36,248 INFO sqlalchemy.engine.Engine [cached since 1352s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:59744 - "POST /api/documents/upload HTTP/1.1" 200 OK
+2026-05-06 15:53:36,252 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:53:36,253 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.file_hash = %(file_hash_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:53:36,253 INFO sqlalchemy.engine.Engine [generated in 0.00007s] {'file_hash_1': 'a51fefbf818e23d5c609aa3b2342fd82', 'param_1': 1}
+Embedded text empty, running OCR on 62923943-37c5-4784-afb7-dad592202390_Annexure - E.pdf
+2026-05-06 15:53:38,260 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:53:38,260 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:53:38,261 INFO sqlalchemy.engine.Engine [cached since 1354s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:53:38,262 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:53:38,262 INFO sqlalchemy.engine.Engine [cached since 1354s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:59744 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:53:38,266 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:53:39,408 INFO sqlalchemy.engine.Engine INSERT INTO documents (id, filename, file_path, file_type, file_size, file_hash, content, category, created_at, modified_at, scanned_at, status) VALUES (%(id)s::UUID, %(filename)s, %(file_path)s, %(file_type)s, %(file_size)s, %(file_hash)s, %(content)s, %(category)s, %(created_at)s, %(modified_at)s, %(scanned_at)s, %(status)s)
+2026-05-06 15:53:39,408 INFO sqlalchemy.engine.Engine [generated in 0.00024s] {'id': UUID('7290c35d-60b0-4b7c-8bdf-b066cf07292d'), 'filename': 'Annexure - E.pdf', 'file_path': '/home/ashok/Desktop/DocunovaApp/backend/uploads/62923943-37c5-4784-afb7-dad592202390_Annexure - E.pdf', 'file_type': 'application/pdf', 'file_size': 530637, 'file_hash': 'a51fefbf818e23d5c609aa3b2342fd82', 'content': "[PAGE_1]\n22/4\nAmeneooune—E.\nADVISORY ON THE.USE OF 'AI GENERATED IMAGERY' FOR INDIAN DEFENCE\nCOMMUNITY\n\n \n\n1. Background, Artificial Intellig ... (4877 characters truncated) ... consequences\nbefore sharing images or personal data with such platforms.\n\nARR\n\n \n\nt\nf\n|\ni\nt\n\ni\n|\n|\ni\n|\n|\n\n \n\x0c\n[PAGE_4]\n\x0c", 'category': 'Letters', 'created_at': datetime.datetime(2026, 5, 6, 10, 23, 39, 408616), 'modified_at': datetime.datetime(2026, 5, 6, 10, 23, 39, 408619), 'scanned_at': datetime.datetime(2026, 5, 6, 10, 23, 39, 408620), 'status': 'indexed'}
+2026-05-06 15:53:39,443 INFO sqlalchemy.engine.Engine INSERT INTO metadata (id, document_id, author, creation_date, language, page_count, custom_tags) VALUES (%(id)s::UUID, %(document_id)s::UUID, %(author)s, %(creation_date)s, %(language)s, %(page_count)s, %(custom_tags)s::JSONB)
+2026-05-06 15:53:39,443 INFO sqlalchemy.engine.Engine [generated in 0.00017s] {'id': UUID('968676a5-3fa7-4a4c-a1cf-ebdab50f6bf5'), 'document_id': UUID('7290c35d-60b0-4b7c-8bdf-b066cf07292d'), 'author': None, 'creation_date': None, 'language': 'en', 'page_count': 4, 'custom_tags': '{}'}
+2026-05-06 15:53:39,444 INFO sqlalchemy.engine.Engine COMMIT
+Processed: Annexure - E.pdf
+2026-05-06 15:53:39,445 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:53:39,446 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(pk_1)s::UUID
+2026-05-06 15:53:39,446 INFO sqlalchemy.engine.Engine [generated in 0.00007s] {'pk_1': UUID('7290c35d-60b0-4b7c-8bdf-b066cf07292d')}
+[Vector] Stored 4/4 chunks for: Annexure - E.pdf
+2026-05-06 15:53:41,635 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:53:41,636 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:53:43,476 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:53:43,476 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:53:43,476 INFO sqlalchemy.engine.Engine [cached since 1360s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:53:43,479 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:53:43,479 INFO sqlalchemy.engine.Engine [cached since 1360s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:34408 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:53:43,486 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:53:58,784 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:53:58,784 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:53:58,784 INFO sqlalchemy.engine.Engine [cached since 1391s ago] {'username_1': 'user', 'param_1': 1}
+INFO:     127.0.0.1:43350 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:53:58,952 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:33196 - "OPTIONS /api/search HTTP/1.1" 200 OK
+2026-05-06 15:54:20,242 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:54:20,243 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:20,243 INFO sqlalchemy.engine.Engine [cached since 1396s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:54:20,290 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:20,290 INFO sqlalchemy.engine.Engine [cached since 765.7s ago] {'id_1': 'f511397c-76bb-44fe-a154-cf1c9e4e21a6', 'param_1': 1}
+2026-05-06 15:54:20,292 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:20,292 INFO sqlalchemy.engine.Engine [cached since 765.7s ago] {'id_1': '5bb95931-c9b6-4993-89d7-1efeeea91a55', 'param_1': 1}
+2026-05-06 15:54:20,294 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:20,294 INFO sqlalchemy.engine.Engine [cached since 765.7s ago] {'id_1': '625f5055-61f1-4064-9392-0f5deb0d00b4', 'param_1': 1}
+INFO:     127.0.0.1:33208 - "POST /api/search HTTP/1.1" 200 OK
+2026-05-06 15:54:25,068 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:33208 - "OPTIONS /api/documents/f511397c-76bb-44fe-a154-cf1c9e4e21a6/file HTTP/1.1" 200 OK
+2026-05-06 15:54:28,389 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:54:28,389 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:28,389 INFO sqlalchemy.engine.Engine [cached since 1405s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:54:28,391 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:28,391 INFO sqlalchemy.engine.Engine [cached since 773.8s ago] {'id_1': 'f511397c-76bb-44fe-a154-cf1c9e4e21a6', 'param_1': 1}
+2026-05-06 15:54:28,395 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:39170 - "GET /api/documents/f511397c-76bb-44fe-a154-cf1c9e4e21a6/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39174 - "OPTIONS /api/documents/5bb95931-c9b6-4993-89d7-1efeeea91a55/file HTTP/1.1" 200 OK
+2026-05-06 15:54:36,141 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:54:36,142 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:36,142 INFO sqlalchemy.engine.Engine [cached since 1412s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:54:36,144 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:36,144 INFO sqlalchemy.engine.Engine [cached since 781.5s ago] {'id_1': '5bb95931-c9b6-4993-89d7-1efeeea91a55', 'param_1': 1}
+2026-05-06 15:54:36,151 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:39180 - "GET /api/documents/5bb95931-c9b6-4993-89d7-1efeeea91a55/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39180 - "OPTIONS /api/documents/625f5055-61f1-4064-9392-0f5deb0d00b4/file HTTP/1.1" 200 OK
+2026-05-06 15:54:40,148 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:54:40,148 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:40,148 INFO sqlalchemy.engine.Engine [cached since 1416s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:54:40,149 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:40,149 INFO sqlalchemy.engine.Engine [cached since 785.5s ago] {'id_1': '625f5055-61f1-4064-9392-0f5deb0d00b4', 'param_1': 1}
+2026-05-06 15:54:40,149 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:39174 - "GET /api/documents/625f5055-61f1-4064-9392-0f5deb0d00b4/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44904 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:54:59,737 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:54:59,737 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:54:59,737 INFO sqlalchemy.engine.Engine [cached since 1436s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:44920 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:55:29,738 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:55:49,021 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:55:49,021 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:55:49,021 INFO sqlalchemy.engine.Engine [cached since 1501s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:36424 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:55:49,196 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:55:49,200 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:55:49,200 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:55:49,200 INFO sqlalchemy.engine.Engine [cached since 1485s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:55:49,201 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:55:49,201 INFO sqlalchemy.engine.Engine [cached since 1485s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:36424 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:55:49,205 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:55:49,207 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:55:49,207 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:55:49,207 INFO sqlalchemy.engine.Engine [cached since 1485s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:55:49,208 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:55:49,208 INFO sqlalchemy.engine.Engine [cached since 1485s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:36424 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:55:49,212 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:36434 - "OPTIONS /api/documents/7290c35d-60b0-4b7c-8bdf-b066cf07292d HTTP/1.1" 200 OK
+2026-05-06 15:55:54,948 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:55:54,948 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:55:54,948 INFO sqlalchemy.engine.Engine [cached since 1491s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:55:54,951 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:55:54,951 INFO sqlalchemy.engine.Engine [cached since 860.3s ago] {'id_1': '7290c35d-60b0-4b7c-8bdf-b066cf07292d', 'param_1': 1}
+2026-05-06 15:55:54,992 INFO sqlalchemy.engine.Engine DELETE FROM metadata WHERE metadata.document_id = %(document_id_1)s::UUID
+2026-05-06 15:55:54,993 INFO sqlalchemy.engine.Engine [generated in 0.00027s] {'document_id_1': UUID('7290c35d-60b0-4b7c-8bdf-b066cf07292d')}
+2026-05-06 15:55:54,995 INFO sqlalchemy.engine.Engine DELETE FROM documents WHERE documents.id = %(id)s::UUID
+2026-05-06 15:55:54,995 INFO sqlalchemy.engine.Engine [generated in 0.00021s] {'id': UUID('7290c35d-60b0-4b7c-8bdf-b066cf07292d')}
+2026-05-06 15:55:54,996 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:36446 - "DELETE /api/documents/7290c35d-60b0-4b7c-8bdf-b066cf07292d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53300 - "OPTIONS /api/documents/bb694e89-2f7d-4138-a058-178e146e01f0 HTTP/1.1" 200 OK
+2026-05-06 15:56:00,803 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:00,803 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:00,803 INFO sqlalchemy.engine.Engine [cached since 1497s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:00,806 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:00,806 INFO sqlalchemy.engine.Engine [cached since 866.2s ago] {'id_1': 'bb694e89-2f7d-4138-a058-178e146e01f0', 'param_1': 1}
+2026-05-06 15:56:00,829 INFO sqlalchemy.engine.Engine DELETE FROM metadata WHERE metadata.document_id = %(document_id_1)s::UUID
+2026-05-06 15:56:00,829 INFO sqlalchemy.engine.Engine [cached since 5.837s ago] {'document_id_1': UUID('bb694e89-2f7d-4138-a058-178e146e01f0')}
+2026-05-06 15:56:00,831 INFO sqlalchemy.engine.Engine DELETE FROM documents WHERE documents.id = %(id)s::UUID
+2026-05-06 15:56:00,831 INFO sqlalchemy.engine.Engine [cached since 5.836s ago] {'id': UUID('bb694e89-2f7d-4138-a058-178e146e01f0')}
+2026-05-06 15:56:00,832 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:53314 - "DELETE /api/documents/bb694e89-2f7d-4138-a058-178e146e01f0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53314 - "OPTIONS /api/documents/e3e88fb0-2288-4293-9281-e07848b7836f HTTP/1.1" 200 OK
+2026-05-06 15:56:04,698 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:04,699 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,699 INFO sqlalchemy.engine.Engine [cached since 1501s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:04,700 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,700 INFO sqlalchemy.engine.Engine [cached since 870.1s ago] {'id_1': 'e3e88fb0-2288-4293-9281-e07848b7836f', 'param_1': 1}
+2026-05-06 15:56:04,717 INFO sqlalchemy.engine.Engine DELETE FROM metadata WHERE metadata.document_id = %(document_id_1)s::UUID
+2026-05-06 15:56:04,717 INFO sqlalchemy.engine.Engine [cached since 9.725s ago] {'document_id_1': UUID('e3e88fb0-2288-4293-9281-e07848b7836f')}
+2026-05-06 15:56:04,717 INFO sqlalchemy.engine.Engine DELETE FROM documents WHERE documents.id = %(id)s::UUID
+2026-05-06 15:56:04,717 INFO sqlalchemy.engine.Engine [cached since 9.723s ago] {'id': UUID('e3e88fb0-2288-4293-9281-e07848b7836f')}
+2026-05-06 15:56:04,718 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:53300 - "DELETE /api/documents/e3e88fb0-2288-4293-9281-e07848b7836f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53300 - "OPTIONS /api/documents/44ef7ffa-a3af-4c69-99c4-c7ecd26af9df HTTP/1.1" 200 OK
+2026-05-06 15:56:04,723 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:04,723 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,723 INFO sqlalchemy.engine.Engine [cached since 1501s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:04,724 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,724 INFO sqlalchemy.engine.Engine [cached since 870.1s ago] {'id_1': '44ef7ffa-a3af-4c69-99c4-c7ecd26af9df', 'param_1': 1}
+2026-05-06 15:56:04,734 INFO sqlalchemy.engine.Engine DELETE FROM metadata WHERE metadata.document_id = %(document_id_1)s::UUID
+2026-05-06 15:56:04,734 INFO sqlalchemy.engine.Engine [cached since 9.742s ago] {'document_id_1': UUID('44ef7ffa-a3af-4c69-99c4-c7ecd26af9df')}
+2026-05-06 15:56:04,734 INFO sqlalchemy.engine.Engine DELETE FROM documents WHERE documents.id = %(id)s::UUID
+2026-05-06 15:56:04,735 INFO sqlalchemy.engine.Engine [cached since 9.74s ago] {'id': UUID('44ef7ffa-a3af-4c69-99c4-c7ecd26af9df')}
+2026-05-06 15:56:04,735 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:53314 - "DELETE /api/documents/44ef7ffa-a3af-4c69-99c4-c7ecd26af9df HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53314 - "OPTIONS /api/documents/9b9fb651-0396-4295-ad89-f8bbf47932c2 HTTP/1.1" 200 OK
+2026-05-06 15:56:04,740 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:04,740 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,740 INFO sqlalchemy.engine.Engine [cached since 1501s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:04,741 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,741 INFO sqlalchemy.engine.Engine [cached since 870.1s ago] {'id_1': '9b9fb651-0396-4295-ad89-f8bbf47932c2', 'param_1': 1}
+2026-05-06 15:56:04,749 INFO sqlalchemy.engine.Engine DELETE FROM metadata WHERE metadata.document_id = %(document_id_1)s::UUID
+2026-05-06 15:56:04,749 INFO sqlalchemy.engine.Engine [cached since 9.757s ago] {'document_id_1': UUID('9b9fb651-0396-4295-ad89-f8bbf47932c2')}
+2026-05-06 15:56:04,750 INFO sqlalchemy.engine.Engine DELETE FROM documents WHERE documents.id = %(id)s::UUID
+2026-05-06 15:56:04,750 INFO sqlalchemy.engine.Engine [cached since 9.756s ago] {'id': UUID('9b9fb651-0396-4295-ad89-f8bbf47932c2')}
+2026-05-06 15:56:04,750 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:53300 - "DELETE /api/documents/9b9fb651-0396-4295-ad89-f8bbf47932c2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53300 - "OPTIONS /api/documents/f3eb9bbc-eb14-4535-9f25-63af0df77fda HTTP/1.1" 200 OK
+2026-05-06 15:56:04,755 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:04,755 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,755 INFO sqlalchemy.engine.Engine [cached since 1501s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:04,755 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,755 INFO sqlalchemy.engine.Engine [cached since 870.1s ago] {'id_1': 'f3eb9bbc-eb14-4535-9f25-63af0df77fda', 'param_1': 1}
+2026-05-06 15:56:04,764 INFO sqlalchemy.engine.Engine DELETE FROM metadata WHERE metadata.document_id = %(document_id_1)s::UUID
+2026-05-06 15:56:04,764 INFO sqlalchemy.engine.Engine [cached since 9.772s ago] {'document_id_1': UUID('f3eb9bbc-eb14-4535-9f25-63af0df77fda')}
+2026-05-06 15:56:04,765 INFO sqlalchemy.engine.Engine DELETE FROM documents WHERE documents.id = %(id)s::UUID
+2026-05-06 15:56:04,765 INFO sqlalchemy.engine.Engine [cached since 9.77s ago] {'id': UUID('f3eb9bbc-eb14-4535-9f25-63af0df77fda')}
+2026-05-06 15:56:04,765 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:53314 - "DELETE /api/documents/f3eb9bbc-eb14-4535-9f25-63af0df77fda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53314 - "OPTIONS /api/documents/625f5055-61f1-4064-9392-0f5deb0d00b4 HTTP/1.1" 200 OK
+2026-05-06 15:56:04,769 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:04,769 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,769 INFO sqlalchemy.engine.Engine [cached since 1501s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:04,770 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,770 INFO sqlalchemy.engine.Engine [cached since 870.2s ago] {'id_1': '625f5055-61f1-4064-9392-0f5deb0d00b4', 'param_1': 1}
+2026-05-06 15:56:04,779 INFO sqlalchemy.engine.Engine DELETE FROM metadata WHERE metadata.document_id = %(document_id_1)s::UUID
+2026-05-06 15:56:04,779 INFO sqlalchemy.engine.Engine [cached since 9.787s ago] {'document_id_1': UUID('625f5055-61f1-4064-9392-0f5deb0d00b4')}
+2026-05-06 15:56:04,780 INFO sqlalchemy.engine.Engine DELETE FROM documents WHERE documents.id = %(id)s::UUID
+2026-05-06 15:56:04,780 INFO sqlalchemy.engine.Engine [cached since 9.785s ago] {'id': UUID('625f5055-61f1-4064-9392-0f5deb0d00b4')}
+2026-05-06 15:56:04,780 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:53300 - "DELETE /api/documents/625f5055-61f1-4064-9392-0f5deb0d00b4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53300 - "OPTIONS /api/documents/5bb95931-c9b6-4993-89d7-1efeeea91a55 HTTP/1.1" 200 OK
+2026-05-06 15:56:04,785 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:04,785 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,785 INFO sqlalchemy.engine.Engine [cached since 1501s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:04,786 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,786 INFO sqlalchemy.engine.Engine [cached since 870.2s ago] {'id_1': '5bb95931-c9b6-4993-89d7-1efeeea91a55', 'param_1': 1}
+2026-05-06 15:56:04,799 INFO sqlalchemy.engine.Engine DELETE FROM metadata WHERE metadata.document_id = %(document_id_1)s::UUID
+2026-05-06 15:56:04,799 INFO sqlalchemy.engine.Engine [cached since 9.806s ago] {'document_id_1': UUID('5bb95931-c9b6-4993-89d7-1efeeea91a55')}
+2026-05-06 15:56:04,799 INFO sqlalchemy.engine.Engine DELETE FROM documents WHERE documents.id = %(id)s::UUID
+2026-05-06 15:56:04,799 INFO sqlalchemy.engine.Engine [cached since 9.805s ago] {'id': UUID('5bb95931-c9b6-4993-89d7-1efeeea91a55')}
+2026-05-06 15:56:04,799 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:53314 - "DELETE /api/documents/5bb95931-c9b6-4993-89d7-1efeeea91a55 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53314 - "OPTIONS /api/documents/f511397c-76bb-44fe-a154-cf1c9e4e21a6 HTTP/1.1" 200 OK
+2026-05-06 15:56:04,804 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:04,804 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,804 INFO sqlalchemy.engine.Engine [cached since 1501s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:04,805 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:04,805 INFO sqlalchemy.engine.Engine [cached since 870.2s ago] {'id_1': 'f511397c-76bb-44fe-a154-cf1c9e4e21a6', 'param_1': 1}
+2026-05-06 15:56:04,816 INFO sqlalchemy.engine.Engine DELETE FROM metadata WHERE metadata.document_id = %(document_id_1)s::UUID
+2026-05-06 15:56:04,816 INFO sqlalchemy.engine.Engine [cached since 9.824s ago] {'document_id_1': UUID('f511397c-76bb-44fe-a154-cf1c9e4e21a6')}
+2026-05-06 15:56:04,816 INFO sqlalchemy.engine.Engine DELETE FROM documents WHERE documents.id = %(id)s::UUID
+2026-05-06 15:56:04,816 INFO sqlalchemy.engine.Engine [cached since 9.822s ago] {'id': UUID('f511397c-76bb-44fe-a154-cf1c9e4e21a6')}
+2026-05-06 15:56:04,817 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:53300 - "DELETE /api/documents/f511397c-76bb-44fe-a154-cf1c9e4e21a6 HTTP/1.1" 200 OK
+2026-05-06 15:56:15,038 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:15,038 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:15,038 INFO sqlalchemy.engine.Engine [cached since 1511s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:44644 - "POST /api/documents/upload HTTP/1.1" 200 OK
+2026-05-06 15:56:15,040 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:15,040 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.file_hash = %(file_hash_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:56:15,042 INFO sqlalchemy.engine.Engine [cached since 158.8s ago] {'file_hash_1': '1b33250003b8625c9d4040d9798cf4f7', 'param_1': 1}
+2026-05-06 15:56:15,071 INFO sqlalchemy.engine.Engine INSERT INTO documents (id, filename, file_path, file_type, file_size, file_hash, content, category, created_at, modified_at, scanned_at, status) VALUES (%(id)s::UUID, %(filename)s, %(file_path)s, %(file_type)s, %(file_size)s, %(file_hash)s, %(content)s, %(category)s, %(created_at)s, %(modified_at)s, %(scanned_at)s, %(status)s)
+2026-05-06 15:56:15,071 INFO sqlalchemy.engine.Engine [cached since 155.7s ago] {'id': UUID('8fe2ca9a-2e83-489e-a349-5abdea267e28'), 'filename': 'MobileTowerLatest.pdf', 'file_path': '/home/ashok/Desktop/DocunovaApp/backend/uploads/7aad5f09-f642-4ad2-93b3-aacbc408c92b_MobileTowerLatest.pdf', 'file_type': 'application/pdf', 'file_size': 64006, 'file_hash': '1b33250003b8625c9d4040d9798cf4f7', 'content': '[PAGE_1]\n \nGuidelines  and procedure for use of warehousing complexes \nof CWC for installation  of Mobile/ Telecom Towers on \ncommercial basis.   ... (5566 characters truncated) ... n of mobile tower, needs to shift tower due the order of \nGovt. body /CWC, the mobile tower shall be removed / shifted at \nno cost of CWC  \n \n3. ', 'category': 'Policies', 'created_at': datetime.datetime(2026, 5, 6, 10, 26, 15, 71879), 'modified_at': datetime.datetime(2026, 5, 6, 10, 26, 15, 71881), 'scanned_at': datetime.datetime(2026, 5, 6, 10, 26, 15, 71882), 'status': 'indexed'}
+2026-05-06 15:56:15,079 INFO sqlalchemy.engine.Engine INSERT INTO metadata (id, document_id, author, creation_date, language, page_count, custom_tags) VALUES (%(id)s::UUID, %(document_id)s::UUID, %(author)s, %(creation_date)s, %(language)s, %(page_count)s, %(custom_tags)s::JSONB)
+2026-05-06 15:56:15,079 INFO sqlalchemy.engine.Engine [cached since 155.6s ago] {'id': UUID('61171401-e2a7-473b-90a8-1fb7dbea590c'), 'document_id': UUID('8fe2ca9a-2e83-489e-a349-5abdea267e28'), 'author': 'Deo Sharma', 'creation_date': datetime.datetime(2018, 12, 4, 14, 52, 1, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 'language': 'en', 'page_count': 3, 'custom_tags': '{}'}
+2026-05-06 15:56:15,080 INFO sqlalchemy.engine.Engine COMMIT
+Processed: MobileTowerLatest.pdf
+2026-05-06 15:56:15,081 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:15,081 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(pk_1)s::UUID
+2026-05-06 15:56:15,081 INFO sqlalchemy.engine.Engine [cached since 155.6s ago] {'pk_1': UUID('8fe2ca9a-2e83-489e-a349-5abdea267e28')}
+2026-05-06 15:56:17,043 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:17,043 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:17,043 INFO sqlalchemy.engine.Engine [cached since 1513s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:17,044 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:56:17,044 INFO sqlalchemy.engine.Engine [cached since 1513s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:44644 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:56:17,045 INFO sqlalchemy.engine.Engine ROLLBACK
+[Vector] Stored 4/4 chunks for: MobileTowerLatest.pdf
+2026-05-06 15:56:17,219 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:56:17,219 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:56:28,615 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:28,615 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:28,616 INFO sqlalchemy.engine.Engine [cached since 1525s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:50504 - "POST /api/documents/upload HTTP/1.1" 200 OK
+2026-05-06 15:56:28,626 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:28,627 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.file_hash = %(file_hash_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:56:28,627 INFO sqlalchemy.engine.Engine [cached since 172.4s ago] {'file_hash_1': 'b71fa14d2d9bb836b9912a6e319c6c87', 'param_1': 1}
+2026-05-06 15:56:30,648 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:30,653 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:30,653 INFO sqlalchemy.engine.Engine [cached since 1527s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:30,659 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:56:30,659 INFO sqlalchemy.engine.Engine [cached since 1527s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:50504 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:56:30,661 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:56:31,018 INFO sqlalchemy.engine.Engine INSERT INTO documents (id, filename, file_path, file_type, file_size, file_hash, content, category, created_at, modified_at, scanned_at, status) VALUES (%(id)s::UUID, %(filename)s, %(file_path)s, %(file_type)s, %(file_size)s, %(file_hash)s, %(content)s, %(category)s, %(created_at)s, %(modified_at)s, %(scanned_at)s, %(status)s)
+2026-05-06 15:56:31,018 INFO sqlalchemy.engine.Engine [cached since 171.6s ago] {'id': UUID('4c407f38-3caa-4348-aa60-a3a25bf10db1'), 'filename': 'FInal_GFR_upto_31_07_2024.pdf', 'file_path': '/home/ashok/Desktop/DocunovaApp/backend/uploads/c928aa77-622b-4706-b588-b07983979e0f_FInal_GFR_upto_31_07_2024.pdf', 'file_type': 'application/pdf', 'file_size': 2092310, 'file_hash': 'b71fa14d2d9bb836b9912a6e319c6c87', 'content': '[PAGE_1]\n1  \n   \n \nGENERAL  \nFINANCIAL RULES  \n2017  \n \n \n \nUpdated up  to 31.07.202 4 \n\n[PAGE_2]\n2  Rule 1  Short Title and Commencemen ... (539134 characters truncated) ... yment should be indicated. \nIn case of default in payment it may be indicated whether default fee in te rms of Rule 279 (3) has been levied.  \n \n ', 'category': 'Rules', 'created_at': datetime.datetime(2026, 5, 6, 10, 26, 31, 17996), 'modified_at': datetime.datetime(2026, 5, 6, 10, 26, 31, 17999), 'scanned_at': datetime.datetime(2026, 5, 6, 10, 26, 31, 18000), 'status': 'indexed'}
+2026-05-06 15:56:31,075 INFO sqlalchemy.engine.Engine INSERT INTO metadata (id, document_id, author, creation_date, language, page_count, custom_tags) VALUES (%(id)s::UUID, %(document_id)s::UUID, %(author)s, %(creation_date)s, %(language)s, %(page_count)s, %(custom_tags)s::JSONB)
+2026-05-06 15:56:31,075 INFO sqlalchemy.engine.Engine [cached since 171.6s ago] {'id': UUID('e2e91aab-e5e5-4009-8c9f-369ad907f95e'), 'document_id': UUID('4c407f38-3caa-4348-aa60-a3a25bf10db1'), 'author': 'ASO EIIA', 'creation_date': datetime.datetime(2024, 8, 12, 11, 0, 14, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 'language': 'en', 'page_count': 177, 'custom_tags': '{}'}
+2026-05-06 15:56:31,076 INFO sqlalchemy.engine.Engine COMMIT
+Processed: FInal_GFR_upto_31_07_2024.pdf
+2026-05-06 15:56:31,078 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:31,078 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(pk_1)s::UUID
+2026-05-06 15:56:31,078 INFO sqlalchemy.engine.Engine [cached since 171.6s ago] {'pk_1': UUID('4c407f38-3caa-4348-aa60-a3a25bf10db1')}
+2026-05-06 15:56:32,908 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:32,908 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:32,908 INFO sqlalchemy.engine.Engine [cached since 1529s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 15:56:32,910 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 15:56:32,910 INFO sqlalchemy.engine.Engine [cached since 1529s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:50504 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 15:56:32,913 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:56:38,403 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:38,403 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 15:56:38,403 INFO sqlalchemy.engine.Engine [cached since 1550s ago] {'username_1': 'user', 'param_1': 1}
+INFO:     127.0.0.1:35672 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 15:56:38,567 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:56:46,669 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:46,670 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:46,670 INFO sqlalchemy.engine.Engine [cached since 1543s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:56:46,709 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:46,709 INFO sqlalchemy.engine.Engine [cached since 912.1s ago] {'id_1': '4c407f38-3caa-4348-aa60-a3a25bf10db1', 'param_1': 1}
+INFO:     127.0.0.1:44486 - "POST /api/search HTTP/1.1" 200 OK
+2026-05-06 15:56:50,769 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:44486 - "OPTIONS /api/documents/4c407f38-3caa-4348-aa60-a3a25bf10db1/file HTTP/1.1" 200 OK
+2026-05-06 15:56:55,253 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:56:55,254 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:55,254 INFO sqlalchemy.engine.Engine [cached since 1551s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 15:56:55,254 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:56:55,254 INFO sqlalchemy.engine.Engine [cached since 920.6s ago] {'id_1': '4c407f38-3caa-4348-aa60-a3a25bf10db1', 'param_1': 1}
+INFO:     127.0.0.1:44496 - "GET /api/documents/4c407f38-3caa-4348-aa60-a3a25bf10db1/file HTTP/1.1" 200 OK
+2026-05-06 15:56:55,259 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:57:13,142 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:57:13,142 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:57:13,142 INFO sqlalchemy.engine.Engine [cached since 1569s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:50512 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:57:24,832 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:58:12,181 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 15:58:12,181 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 15:58:12,181 INFO sqlalchemy.engine.Engine [cached since 1628s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:49960 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 15:58:23,035 INFO sqlalchemy.engine.Engine ROLLBACK
+[Vector] Stored 387/387 chunks for: FInal_GFR_upto_31_07_2024.pdf
+2026-05-06 15:58:45,477 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 15:58:45,477 INFO sqlalchemy.engine.Engine ROLLBACK
+I0506 16:00:05.581426  396540 chttp2_transport.cc:1369] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0506 16:00:05.581554  396540 chttp2_transport.cc:1401] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+INFO:     127.0.0.1:55262 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55278 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:02:40,659 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:02:40,659 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:02:40,659 INFO sqlalchemy.engine.Engine [cached since 1897s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:55292 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:02:40,661 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:02:40,663 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:02:40,663 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:02:40,663 INFO sqlalchemy.engine.Engine [cached since 1897s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:55292 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:02:40,664 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:02:54,302 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:02:54,303 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:02:54,303 INFO sqlalchemy.engine.Engine [cached since 1910s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:58858 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:03:14,867 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:03:22,236 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:03:22,236 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:03:22,236 INFO sqlalchemy.engine.Engine [cached since 1938s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:56148 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:03:41,408 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:04:17,955 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:04:17,956 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:04:17,956 INFO sqlalchemy.engine.Engine [cached since 1994s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 16:04:18,009 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:04:18,009 INFO sqlalchemy.engine.Engine [cached since 1363s ago] {'id_1': '4c407f38-3caa-4348-aa60-a3a25bf10db1', 'param_1': 1}
+INFO:     127.0.0.1:46074 - "POST /api/search HTTP/1.1" 200 OK
+2026-05-06 16:04:20,740 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:04:26,096 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:04:26,097 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:04:26,097 INFO sqlalchemy.engine.Engine [cached since 2002s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 16:04:26,100 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:04:26,100 INFO sqlalchemy.engine.Engine [cached since 1371s ago] {'id_1': '4c407f38-3caa-4348-aa60-a3a25bf10db1', 'param_1': 1}
+INFO:     127.0.0.1:46090 - "GET /api/documents/4c407f38-3caa-4348-aa60-a3a25bf10db1/file HTTP/1.1" 200 OK
+2026-05-06 16:04:26,115 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:04:39,731 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:04:39,732 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:04:39,732 INFO sqlalchemy.engine.Engine [cached since 2016s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:50148 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:05:03,272 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:48656 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 16:05:34,097 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:05:34,097 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 16:05:34,097 INFO sqlalchemy.engine.Engine [cached since 2086s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:48668 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 16:05:34,268 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:48668 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48656 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:05:34,274 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:05:34,274 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:05:34,274 INFO sqlalchemy.engine.Engine [cached since 2070s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:05:34,275 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:05:34,275 INFO sqlalchemy.engine.Engine [cached since 2070s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:48682 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:05:34,278 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:05:34,279 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:05:34,279 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:05:34,280 INFO sqlalchemy.engine.Engine [cached since 2070s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:05:34,280 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:05:34,280 INFO sqlalchemy.engine.Engine [cached since 2070s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:48682 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:05:34,283 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:37084 - "OPTIONS /api/documents/upload HTTP/1.1" 200 OK
+2026-05-06 16:06:00,294 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:06:00,294 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:06:00,294 INFO sqlalchemy.engine.Engine [cached since 2096s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:37084 - "POST /api/documents/upload HTTP/1.1" 200 OK
+2026-05-06 16:06:00,298 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:06:00,298 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.file_hash = %(file_hash_1)s 
+ LIMIT %(param_1)s
+2026-05-06 16:06:00,298 INFO sqlalchemy.engine.Engine [cached since 744s ago] {'file_hash_1': 'fb9dbda3474197c17bf5a478e4228dc5', 'param_1': 1}
+2026-05-06 16:06:02,082 INFO sqlalchemy.engine.Engine INSERT INTO documents (id, filename, file_path, file_type, file_size, file_hash, content, category, created_at, modified_at, scanned_at, status) VALUES (%(id)s::UUID, %(filename)s, %(file_path)s, %(file_type)s, %(file_size)s, %(file_hash)s, %(content)s, %(category)s, %(created_at)s, %(modified_at)s, %(scanned_at)s, %(status)s)
+2026-05-06 16:06:02,082 INFO sqlalchemy.engine.Engine [cached since 742.7s ago] {'id': UUID('011f6d80-a287-4d3a-895a-ad6ad51c2341'), 'filename': 'CantonmentAct2006.pdf', 'file_path': '/home/ashok/Desktop/DocunovaApp/backend/uploads/39472dcf-9f90-45d1-b7ff-7ae2133e8eb7_CantonmentAct2006.pdf', 'file_type': 'application/pdf', 'file_size': 859610, 'file_hash': 'fb9dbda3474197c17bf5a478e4228dc5', 'content': "[PAGE_1]\n \n1 \n THE CANTONMENTS ACT, 2006  \n__________  \nARRANGEMENT OF SECTIONS  \n__________  \nCHAPTER I  \nPRELIMINARY  \nSECTIONS  \n1. Shor ... (427080 characters truncated) ... from \ncantonment and \nprohibiting him from re -\nentering it without \npermission . District Magistrate  Thirty days from service of \nnotice.  \n ", 'category': 'Rules', 'created_at': datetime.datetime(2026, 5, 6, 10, 36, 2, 81975), 'modified_at': datetime.datetime(2026, 5, 6, 10, 36, 2, 81978), 'scanned_at': datetime.datetime(2026, 5, 6, 10, 36, 2, 81979), 'status': 'indexed'}
+2026-05-06 16:06:02,122 INFO sqlalchemy.engine.Engine INSERT INTO metadata (id, document_id, author, creation_date, language, page_count, custom_tags) VALUES (%(id)s::UUID, %(document_id)s::UUID, %(author)s, %(creation_date)s, %(language)s, %(page_count)s, %(custom_tags)s::JSONB)
+2026-05-06 16:06:02,122 INFO sqlalchemy.engine.Engine [cached since 742.7s ago] {'id': UUID('6688c340-ba5e-4f2e-9d0a-1f6b508579a4'), 'document_id': UUID('011f6d80-a287-4d3a-895a-ad6ad51c2341'), 'author': 'Naseem', 'creation_date': datetime.datetime(2023, 11, 14, 16, 5, 29, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 'language': 'en', 'page_count': 119, 'custom_tags': '{}'}
+2026-05-06 16:06:02,123 INFO sqlalchemy.engine.Engine COMMIT
+Processed: CantonmentAct2006.pdf
+2026-05-06 16:06:02,125 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:06:02,126 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(pk_1)s::UUID
+2026-05-06 16:06:02,126 INFO sqlalchemy.engine.Engine [cached since 742.7s ago] {'pk_1': UUID('011f6d80-a287-4d3a-895a-ad6ad51c2341')}
+2026-05-06 16:06:02,299 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:06:02,299 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:06:02,299 INFO sqlalchemy.engine.Engine [cached since 2098s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:06:02,300 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:06:02,300 INFO sqlalchemy.engine.Engine [cached since 2098s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37084 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:06:02,304 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:52118 - "OPTIONS /api/documents/011f6d80-a287-4d3a-895a-ad6ad51c2341/file HTTP/1.1" 200 OK
+2026-05-06 16:06:11,428 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:06:11,451 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:06:11,451 INFO sqlalchemy.engine.Engine [cached since 2108s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:06:11,452 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:06:11,452 INFO sqlalchemy.engine.Engine [cached since 1477s ago] {'id_1': '011f6d80-a287-4d3a-895a-ad6ad51c2341', 'param_1': 1}
+INFO:     127.0.0.1:52128 - "GET /api/documents/011f6d80-a287-4d3a-895a-ad6ad51c2341/file HTTP/1.1" 200 OK
+2026-05-06 16:06:11,456 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:06:26,452 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:06:26,452 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 16:06:26,452 INFO sqlalchemy.engine.Engine [cached since 2138s ago] {'username_1': 'user', 'param_1': 1}
+INFO:     127.0.0.1:47446 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 16:06:26,617 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:47446 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:06:31,278 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:06:31,278 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:06:31,278 INFO sqlalchemy.engine.Engine [cached since 2127s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:47460 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:06:48,945 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:07:11,108 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:07:11,108 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:07:11,108 INFO sqlalchemy.engine.Engine [cached since 2167s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:60840 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:07:27,818 INFO sqlalchemy.engine.Engine ROLLBACK
+[Vector] Stored 319/319 chunks for: CantonmentAct2006.pdf
+2026-05-06 16:08:11,250 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:08:11,251 INFO sqlalchemy.engine.Engine ROLLBACK
+I0506 16:09:31.349017  396533 chttp2_transport.cc:1369] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {http2_error:11, grpc_status:14}
+E0506 16:09:31.349138  396533 chttp2_transport.cc:1401] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+2026-05-06 16:12:39,954 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:12:39,955 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:12:39,955 INFO sqlalchemy.engine.Engine [cached since 2496s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:43494 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:12:39,955 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:12:39,956 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:12:39,956 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:12:39,956 INFO sqlalchemy.engine.Engine [cached since 2496s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:43494 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:12:39,957 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:37354 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:20:25,853 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:25,853 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:25,853 INFO sqlalchemy.engine.Engine [cached since 2962s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:37354 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:20:25,854 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:25,855 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:25,855 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:25,855 INFO sqlalchemy.engine.Engine [cached since 2962s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:37354 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:20:25,855 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:37354 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:20:25,862 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:25,862 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:25,862 INFO sqlalchemy.engine.Engine [cached since 2962s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:20:25,863 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:20:25,863 INFO sqlalchemy.engine.Engine [cached since 2962s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37354 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:20:25,867 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:25,868 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:25,868 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:25,868 INFO sqlalchemy.engine.Engine [cached since 2962s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:20:25,868 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:20:25,868 INFO sqlalchemy.engine.Engine [cached since 2962s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37354 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:20:25,871 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:26,514 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:26,515 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:26,515 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:37354 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:20:26,515 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:26,517 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:26,517 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:26,517 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:37354 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:20:26,517 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:26,522 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:26,522 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:26,522 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:20:26,523 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:20:26,523 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37354 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:20:26,526 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:26,528 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:26,528 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:26,528 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:20:26,529 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:20:26,529 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37354 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:20:26,534 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:26,888 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:26,889 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:26,889 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:37354 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:20:26,891 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:26,898 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:26,898 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:26,898 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+INFO:     127.0.0.1:37354 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:20:26,899 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:26,907 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:26,908 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:26,908 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:20:26,908 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:20:26,908 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37354 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:20:26,912 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:20:26,913 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:20:26,913 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:20:26,913 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:20:26,913 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:20:26,913 INFO sqlalchemy.engine.Engine [cached since 2963s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:37354 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:20:26,916 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:36712 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 16:21:03,434 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:21:03,434 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 16:21:03,434 INFO sqlalchemy.engine.Engine [cached since 3015s ago] {'username_1': 'user', 'param_1': 1}
+INFO:     127.0.0.1:36712 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 16:21:03,600 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:55728 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:43:08,185 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:43:08,185 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:43:08,185 INFO sqlalchemy.engine.Engine [cached since 4324s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:55728 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:43:08,186 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:43:08,187 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:43:08,187 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:43:08,187 INFO sqlalchemy.engine.Engine [cached since 4324s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:55728 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:43:08,188 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:43:08,807 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:43:08,808 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:43:08,808 INFO sqlalchemy.engine.Engine [cached since 4325s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:55728 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:43:08,808 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:43:08,809 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:43:08,809 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:43:08,809 INFO sqlalchemy.engine.Engine [cached since 4325s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:55728 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:43:08,810 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:43:09,022 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:43:09,022 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:43:09,022 INFO sqlalchemy.engine.Engine [cached since 4325s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:55728 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:43:09,024 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:43:09,025 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:43:09,025 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:43:09,025 INFO sqlalchemy.engine.Engine [cached since 4325s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:55728 - "GET /api/auth/me HTTP/1.1" 200 OK
+2026-05-06 16:43:09,026 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:55746 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:43:14,418 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:43:14,418 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:43:14,418 INFO sqlalchemy.engine.Engine [cached since 4331s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:55746 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:43:34,374 INFO sqlalchemy.engine.Engine ROLLBACK
+I0506 16:45:25.177448  442409 chttp2_transport.cc:1369] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0506 16:45:25.177501  442409 chttp2_transport.cc:1401] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+INFO:     127.0.0.1:55700 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 16:56:23,761 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:56:23,762 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 16:56:23,762 INFO sqlalchemy.engine.Engine [cached since 5136s ago] {'username_1': 'admin', 'param_1': 1}
+INFO:     127.0.0.1:55700 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 16:56:23,929 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:55700 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:56:23,936 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:56:23,936 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:56:23,936 INFO sqlalchemy.engine.Engine [cached since 5120s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:56:23,937 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:56:23,937 INFO sqlalchemy.engine.Engine [cached since 5120s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:55700 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:56:23,941 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:56:23,942 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:56:23,942 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:56:23,942 INFO sqlalchemy.engine.Engine [cached since 5120s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:56:23,943 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents ORDER BY documents.created_at DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-05-06 16:56:23,943 INFO sqlalchemy.engine.Engine [cached since 5120s ago] {'param_1': 100, 'param_2': 0}
+INFO:     127.0.0.1:55700 - "GET /api/documents HTTP/1.1" 200 OK
+2026-05-06 16:56:23,947 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:34566 - "OPTIONS /api/documents/4c407f38-3caa-4348-aa60-a3a25bf10db1/file HTTP/1.1" 200 OK
+2026-05-06 16:56:32,823 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:56:32,823 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:56:32,824 INFO sqlalchemy.engine.Engine [cached since 5129s ago] {'id_1': '2bdb1435-c5a5-4610-b0a6-28337b69a1ca', 'param_1': 1}
+2026-05-06 16:56:32,827 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:56:32,827 INFO sqlalchemy.engine.Engine [cached since 4498s ago] {'id_1': '4c407f38-3caa-4348-aa60-a3a25bf10db1', 'param_1': 1}
+INFO:     127.0.0.1:34566 - "GET /api/documents/4c407f38-3caa-4348-aa60-a3a25bf10db1/file HTTP/1.1" 200 OK
+2026-05-06 16:56:32,840 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-05-06 16:57:27,624 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:57:27,624 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2026-05-06 16:57:27,624 INFO sqlalchemy.engine.Engine [cached since 5200s ago] {'username_1': 'user', 'param_1': 1}
+INFO:     127.0.0.1:55880 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-05-06 16:57:27,808 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:39084 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:57:49,850 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:57:49,851 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:57:49,851 INFO sqlalchemy.engine.Engine [cached since 5206s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+INFO:     127.0.0.1:39084 - "POST /api/chat/rag HTTP/1.1" 200 OK
+2026-05-06 16:58:14,662 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:34026 - "OPTIONS /api/search HTTP/1.1" 200 OK
+2026-05-06 16:59:33,875 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-06 16:59:33,876 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.role AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:59:33,876 INFO sqlalchemy.engine.Engine [cached since 5310s ago] {'id_1': 'f3b288eb-6f9a-4fb7-9d84-fda9a80e086d', 'param_1': 1}
+2026-05-06 16:59:33,947 INFO sqlalchemy.engine.Engine SELECT documents.id AS documents_id, documents.filename AS documents_filename, documents.file_path AS documents_file_path, documents.file_type AS documents_file_type, documents.file_size AS documents_file_size, documents.file_hash AS documents_file_hash, documents.content AS documents_content, documents.category AS documents_category, documents.created_at AS documents_created_at, documents.modified_at AS documents_modified_at, documents.scanned_at AS documents_scanned_at, documents.status AS documents_status 
+FROM documents 
+WHERE documents.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s
+2026-05-06 16:59:33,947 INFO sqlalchemy.engine.Engine [cached since 4679s ago] {'id_1': '4c407f38-3caa-4348-aa60-a3a25bf10db1', 'param_1': 1}
+INFO:     127.0.0.1:34026 - "POST /api/search HTTP/1.1" 200 OK
+2026-05-06 16:59:36,576 INFO sqlalchemy.engine.Engine ROLLBACK
+I0506 17:00:00.592703  442403 chttp2_transport.cc:1369] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0506 17:00:00.592841  442403 chttp2_transport.cc:1401] unix:/tmp/tmpa6va85kx_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
