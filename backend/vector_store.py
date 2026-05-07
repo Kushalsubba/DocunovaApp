@@ -14,8 +14,8 @@ from config import settings
 
 COLLECTION = "document_chunks"
 EMBED_DIM = 768          # nomic-embed-text:latest output dimension
-CHUNK_WORDS = 200        # words per chunk (updated)
-OVERLAP_WORDS = 20       # word overlap between consecutive chunks (updated)
+CHUNK_WORDS = 200        # words per chunk
+OVERLAP_WORDS = 50       # word overlap between consecutive chunks (25% of chunk)
 
 
 # ── Embedding ─────────────────────────────────────────────────────────────────
@@ -202,6 +202,32 @@ class MilvusVectorStore:
             return hits
         except Exception as e:
             print(f"[Milvus] Search error: {e}")
+            return []
+
+    def get_adjacent_chunks(self, doc_id: str, chunk_index: int,
+                            window: int = 1) -> List[Dict[str, Any]]:
+        """Return chunks immediately before/after chunk_index for the same document."""
+        indices = [i for i in range(chunk_index - window, chunk_index + window + 1)
+                   if i >= 0 and i != chunk_index]
+        if not indices:
+            return []
+        try:
+            results = self.client.query(
+                collection_name=COLLECTION,
+                filter=f'doc_id == "{doc_id}" and chunk_index in {indices}',
+                output_fields=["doc_id", "filename", "page_number",
+                                "chunk_index", "content"],
+            )
+            return [{
+                "doc_id":      r["doc_id"],
+                "filename":    r["filename"],
+                "page_number": r["page_number"],
+                "chunk_index": r["chunk_index"],
+                "content":     r["content"],
+                "score":       0.0,
+            } for r in results]
+        except Exception as e:
+            print(f"[Milvus] get_adjacent_chunks error: {e}")
             return []
 
     def count(self) -> int:

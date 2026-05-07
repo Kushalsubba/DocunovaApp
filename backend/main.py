@@ -2,6 +2,7 @@ import hashlib
 import os
 import shutil
 import uuid
+from collections import defaultdict
 from datetime import datetime
 from typing import List, Optional, Dict, Any
 
@@ -931,85 +932,133 @@ async def rag_chat(
         sources_info:  list = []
 
         if not is_greeting:
+            token_budget = chat_request.max_context_tokens
+
             # ── Primary: Milvus semantic search ──────────────────────────────
+            semantic_hits: list = []
             query_emb = get_embedding(query)
             if query_emb:
                 vs = MilvusVectorStore()
-                hits = vs.search(query_emb, limit=8, min_score=0.30)
+                semantic_hits = vs.search(query_emb, limit=12, min_score=0.35)
 
-                # Deduplicate sources (keep best-scoring chunk per doc)
-                best_per_doc: dict = {}
-                for hit in hits:
-                    did = hit["doc_id"]
-                    if did not in best_per_doc or hit["score"] > best_per_doc[did]["score"]:
-                        best_per_doc[did] = hit
+                # Expand context: fetch adjacent chunks (±1) for top 4 hits
+                seen_pairs: set = {(h["doc_id"], h["chunk_index"]) for h in semantic_hits}
+                extra: list = []
+                for hit in semantic_hits[:4]:
+                    for adj in vs.get_adjacent_chunks(hit["doc_id"], hit["chunk_index"]):
+                        key = (adj["doc_id"], adj["chunk_index"])
+                        if key not in seen_pairs:
+                            seen_pairs.add(key)
+                            extra.append(adj)
+                all_chunks = semantic_hits + extra
+            else:
+                all_chunks = []
 
-                # Build context from ALL relevant chunks (preserves multiple pages)
-                seen_ids: set = set()
-                token_budget = chat_request.max_context_tokens
-                tokens_used = 0
-                for hit in hits:
-                    chunk_tokens = len(hit["content"]) // 4
-                    if tokens_used + chunk_tokens > token_budget:
-                        break
-                    chunk_key = (hit["doc_id"], hit["chunk_index"])
-                    if chunk_key in seen_ids:
+            # ── Supplementary: ES keyword search (always runs) ────────────────
+            # Catches exact-match terms that semantic search may miss
+            es_doc_ids: set = {h["doc_id"] for h in all_chunks}
+            try:
+                se = SearchEngine()
+                raw_es = se.search(query=query, limit=5)
+                for r in raw_es.get("results", []):
+                    if r["id"] in es_doc_ids:
+                        continue   # already covered by semantic results
+                    doc = db.query(Document).filter(Document.id == r["id"]).first()
+                    if not doc:
                         continue
-                    seen_ids.add(chunk_key)
+                    plain = clean_snippet(doc.content or "")
+                    first_word = query.lower().split()[0] if query.split() else ""
+                    idx = plain.lower().find(first_word) if first_word else -1
+                    snippet = plain[max(0, idx - 100): idx + 600] if idx >= 0 else plain[:600]
+                    pg = find_page_for_query(doc.file_path or "", query,
+                                             stored_content=doc.content or "")
                     context_parts.append(
-                        f"[Source: {hit['filename']} — Page {hit['page_number']}]\n"
-                        f"{hit['content']}\n"
+                        f"[Source: {doc.filename} — Page {pg}]\n{snippet}\n"
                     )
-                    tokens_used += chunk_tokens
-
-                # Build sources list from best chunk per document
-                for hit in best_per_doc.values():
                     sources_info.append({
-                        "filename":    hit["filename"],
-                        "id":          hit["doc_id"],
-                        "score":       hit["score"],
-                        "page_number": hit["page_number"],
-                        "excerpt":     hit["content"][:300].strip(),
+                        "filename":    doc.filename,
+                        "id":          str(doc.id),
+                        "score":       round(r.get("score", 1.0), 2),
+                        "page_number": pg,
+                        "excerpt":     snippet[:300].strip(),
                     })
+            except Exception:
+                pass
 
-            # ── Fallback: ES keyword search if Milvus returned nothing ───────
-            if not context_parts:
-                try:
-                    se = SearchEngine()
-                    raw = se.search(query=query, limit=5)
-                    for r in raw.get("results", []):
-                        doc = db.query(Document).filter(Document.id == r["id"]).first()
-                        if not doc:
-                            continue
-                        plain = clean_snippet(doc.content or "")
-                        idx = plain.lower().find(query.lower().split()[0])
-                        snippet = plain[max(0, idx-100): idx+500] if idx >= 0 else plain[:500]
-                        pg = find_page_for_query(doc.file_path or "", query,
-                                                 stored_content=doc.content or "")
-                        context_parts.append(
-                            f"[Source: {doc.filename} — Page {pg}]\n{snippet}\n"
-                        )
-                        sources_info.append({
-                            "filename":    doc.filename,
-                            "id":          str(doc.id),
-                            "score":       round(r.get("score", 1.0), 2),
-                            "page_number": pg,
-                            "excerpt":     snippet[:300].strip(),
-                        })
-                except Exception:
-                    pass
+            # ── Assemble context from semantic chunks ─────────────────────────
+            # Group by document, sort each doc's chunks by chunk_index
+            doc_chunk_map: dict = defaultdict(list)
+            for c in all_chunks:
+                doc_chunk_map[c["doc_id"]].append(c)
+            for did in doc_chunk_map:
+                doc_chunk_map[did].sort(key=lambda x: x["chunk_index"])
 
-        # ── Build prompt and call llama3.2:latest ─────────────────────────────
+            # Sort documents by their best semantic score (highest first)
+            doc_best_score: dict = {}
+            for h in semantic_hits:
+                did = h["doc_id"]
+                if did not in doc_best_score or h["score"] > doc_best_score[did]:
+                    doc_best_score[did] = h["score"]
+            ordered_docs = sorted(doc_chunk_map.keys(),
+                                  key=lambda d: doc_best_score.get(d, 0), reverse=True)
+
+            tokens_used = sum(len(p) // 4 for p in context_parts)
+            for doc_id in ordered_docs:
+                chunks = doc_chunk_map[doc_id]
+                best = max(chunks, key=lambda x: x.get("score", 0))
+
+                # Join adjacent chunks; insert "…" where there is a gap
+                merged_parts: list = []
+                prev_idx = -2
+                for c in chunks:
+                    if prev_idx >= 0 and c["chunk_index"] > prev_idx + 1:
+                        merged_parts.append("…")
+                    merged_parts.append(c["content"])
+                    prev_idx = c["chunk_index"]
+                merged_text = " ".join(merged_parts)
+
+                chunk_tokens = len(merged_text) // 4
+                if tokens_used + chunk_tokens > token_budget:
+                    break
+                tokens_used += chunk_tokens
+
+                context_parts.insert(
+                    len([p for p in context_parts if "[Source:" in p]),
+                    f"[Source: {best['filename']} — Page {best['page_number']}]\n"
+                    f"{merged_text}\n",
+                )
+                sources_info.insert(0, {
+                    "filename":    best["filename"],
+                    "id":          doc_id,
+                    "score":       doc_best_score.get(doc_id, 0),
+                    "page_number": best["page_number"],
+                    "excerpt":     merged_text[:300].strip(),
+                })
+
+            # Deduplicate sources_info by doc id (semantic entries come first)
+            seen_src: set = set()
+            deduped_sources: list = []
+            for s in sources_info:
+                key = s["id"]
+                if key not in seen_src:
+                    seen_src.add(key)
+                    deduped_sources.append(s)
+            sources_info = deduped_sources
+
+        # ── Build prompt and call LLM ─────────────────────────────────────────
         SYSTEM = (
-            "You are Docunova, a document assistant. "
-            "Strict rules:\n"
-            "1. Answer ONLY from the document excerpts provided below.\n"
-            "2. NEVER use external knowledge or training data.\n"
-            "3. When asked for a definition, quote the exact passage, then name the "
-            "document and page.\n"
-            "4. If the excerpts do not contain the answer, say: "
-            "'I could not find this in the uploaded documents.'\n"
-            "5. Be concise and factual."
+            "You are Docunova, a precise document assistant.\n"
+            "Rules (follow strictly):\n"
+            "1. Base your answer SOLELY on the document excerpts provided — "
+            "never use external knowledge.\n"
+            "2. Always cite sources using the format: "
+            "(Document: <filename>, Page <N>).\n"
+            "3. When accuracy matters (definitions, numbers, dates, names), "
+            "quote the relevant passage verbatim before paraphrasing.\n"
+            "4. If the answer spans multiple documents, synthesize and cite each one.\n"
+            "5. If the excerpts do not contain sufficient information, respond exactly: "
+            "'I could not find this in the uploaded documents.' — do not speculate.\n"
+            "6. Answer the question directly and concisely, then provide citations."
         )
 
         if is_greeting:
@@ -1027,18 +1076,18 @@ async def rag_chat(
         else:
             context_text = "\n---\n".join(context_parts)
             user_msg = (
-                f"Excerpts from uploaded documents:\n\n{context_text}\n\n"
-                f"---\nUser question: {query}\n\n"
+                f"Document excerpts:\n\n{context_text}\n\n"
+                f"---\nQuestion: {query}\n\n"
                 "Answer using only the excerpts above. "
-                "Quote the relevant passage and cite the document name and page."
+                "Quote key passages and cite each source (Document: <filename>, Page <N>)."
             )
-            ai_response = _call_ollama(SYSTEM, user_msg, max_tokens=500)
+            ai_response = _call_ollama(SYSTEM, user_msg, max_tokens=800)
             if not ai_response:
                 # Ollama unavailable — show raw excerpt
                 src = sources_info[0] if sources_info else {}
                 ai_response = (
-                    f"Relevant passage from {src.get('filename','the document')} "
-                    f"(Page {src.get('page_number',1)}):\n\n"
+                    f"Relevant passage from {src.get('filename', 'the document')} "
+                    f"(Page {src.get('page_number', 1)}):\n\n"
                     + context_parts[0].strip()
                 )
 

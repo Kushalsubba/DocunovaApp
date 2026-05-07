@@ -162,7 +162,7 @@ export function UserChatBot({ token, onOpenSource }: Props) {
           <div className="chatbot-welcome">
             <span className="welcome-icon">📚</span>
             <h3>Welcome to Docunova</h3>
-            <p>Ask any question about your uploaded documents and I'll search through them to find the answer.</p>
+            <p>Please ask any question about your uploaded documents and I'll search through them...</p>
             <div className="example-prompts">
               <p style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: '#6b7280' }}>Example questions:</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
