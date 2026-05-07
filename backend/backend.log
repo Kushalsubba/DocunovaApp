@@ -237,3 +237,47 @@ E0507 14:11:35.567356  277108 chttp2_transport.cc:1401] unix:/tmp/tmpo3lrowm3_mi
 INFO:     127.0.0.1:51534 - "POST /api/chat/rag HTTP/1.1" 200 OK
 I0507 14:14:01.419787  316004 chttp2_transport.cc:1369] unix:/tmp/tmpo3lrowm3_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
 E0507 14:14:01.419843  316004 chttp2_transport.cc:1401] unix:/tmp/tmpo3lrowm3_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+INFO:     127.0.0.1:38878 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38878 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56656 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56664 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56674 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56674 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57668 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57674 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47564 - "OPTIONS /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47570 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41546 - "OPTIONS /api/documents/4c407f38-3caa-4348-aa60-a3a25bf10db1/file HTTP/1.1" 200 OK
+I0507 14:40:07.255785  316008 chttp2_transport.cc:1369] unix:/tmp/tmpo3lrowm3_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0507 14:40:07.255864  316008 chttp2_transport.cc:1401] unix:/tmp/tmpo3lrowm3_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+INFO:     127.0.0.1:51892 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50700 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47168 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36720 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47240 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33086 - "POST /api/chat/rag HTTP/1.1" 200 OK
+I0507 14:44:13.050221  346363 chttp2_transport.cc:1369] unix:/tmp/tmpo3lrowm3_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0507 14:44:13.050356  346363 chttp2_transport.cc:1401] unix:/tmp/tmpo3lrowm3_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+INFO:     127.0.0.1:44872 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44874 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41370 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41370 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41374 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41376 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41376 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57906 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57914 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57914 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57914 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43712 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43712 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43712 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56822 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59184 - "OPTIONS /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59188 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59188 - "OPTIONS /api/documents/011f6d80-a287-4d3a-895a-ad6ad51c2341/file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59188 - "GET /api/documents/011f6d80-a287-4d3a-895a-ad6ad51c2341/file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48574 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48576 - "POST /api/chat/rag HTTP/1.1" 200 OK
+I0507 15:45:38.778102  399767 chttp2_transport.cc:1369] unix:/tmp/tmpo3lrowm3_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0507 15:45:38.778200  399767 chttp2_transport.cc:1401] unix:/tmp/tmpo3lrowm3_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
