@@ -14,8 +14,11 @@ from config import settings
 
 COLLECTION = "document_chunks"
 EMBED_DIM = 768          # nomic-embed-text:latest output dimension
-CHUNK_WORDS = 200        # words per chunk
-OVERLAP_WORDS = 50       # word overlap between consecutive chunks (25% of chunk)
+CHUNK_WORDS = 200        # words per chunk when splitting large sections
+OVERLAP_WORDS = 40       # word overlap between consecutive word-split chunks
+MAX_SECTION_WORDS = 300  # sections up to this size are kept as one chunk
+
+_HEADING_RE = re.compile(r'^#{1,4}\s+.+', re.MULTILINE)
 
 
 # ── Embedding ─────────────────────────────────────────────────────────────────
@@ -59,13 +62,44 @@ def get_embeddings_batch(texts: List[str],
 
 # ── Chunking ──────────────────────────────────────────────────────────────────
 
+def _split_by_headings(text: str) -> List[str]:
+    """Split markdown text at heading boundaries (# through ####).
+
+    Keeps each heading attached to its body so a chunk about "Procurement Rules"
+    always carries that heading as context for the embedder.
+    """
+    lines = text.split('\n')
+    sections: List[str] = []
+    current: List[str] = []
+
+    for line in lines:
+        if _HEADING_RE.match(line) and current:
+            section = '\n'.join(current).strip()
+            if section:
+                sections.append(section)
+            current = [line]
+        else:
+            current.append(line)
+
+    if current:
+        section = '\n'.join(current).strip()
+        if section:
+            sections.append(section)
+
+    return sections if sections else [text]
+
+
 def chunk_document(content: str) -> List[Dict[str, Any]]:
+    """Split document content into semantic chunks for vector storage.
+
+    Strategy:
+    1. Split by [PAGE_N] markers to respect page boundaries.
+    2. Within each page, split at markdown heading boundaries so each chunk
+       covers exactly one topic/section rather than mixing several together.
+    3. Sections larger than MAX_SECTION_WORDS are further split with overlap
+       so no single embedding vector tries to cover too much text.
     """
-    Split stored document content (which may have [PAGE_N] markers) into
-    overlapping word-level chunks.  Returns list of dicts:
-        {page_number, chunk_index, content}
-    """
-    # Parse page-marked sections
+    # ── Parse page-marked sections ────────────────────────────────────────────
     parts = re.split(r'\[PAGE_(\d+)\]\n?', content)
     page_sections: List[tuple] = []   # (page_number, text)
     current_page = 1
@@ -80,44 +114,83 @@ def chunk_document(content: str) -> List[Dict[str, Any]]:
             if text:
                 page_sections.append((current_page, text))
 
-    # Fallback: no markers — treat whole text as page 1
+    # Fallback: no markers — treat whole document as page 1
     if not page_sections:
         clean = re.sub(r'\[PAGE_\d+\]\n?', '', content).strip()
         if clean:
             page_sections = [(1, clean)]
 
+    # ── Build chunks ──────────────────────────────────────────────────────────
     chunks: List[Dict] = []
     idx = 0
     for page_num, text in page_sections:
-        words = text.split()
-        pos = 0
-        while pos < len(words):
-            segment = " ".join(words[pos: pos + CHUNK_WORDS]).strip()
-            if segment:
+        for section_text in _split_by_headings(text):
+            section_text = section_text.strip()
+            if not section_text:
+                continue
+            words = section_text.split()
+            if not words:
+                continue
+
+            if len(words) <= MAX_SECTION_WORDS:
+                # Small enough — keep the whole section as one semantically
+                # coherent chunk (heading + body stay together)
                 chunks.append({
                     "page_number": page_num,
                     "chunk_index": idx,
-                    "content": segment,
+                    "content":     section_text,
                 })
                 idx += 1
-            if pos + CHUNK_WORDS >= len(words):
-                break
-            pos += CHUNK_WORDS - OVERLAP_WORDS
+            else:
+                # Large section — slide a window with overlap
+                pos = 0
+                while pos < len(words):
+                    segment = " ".join(words[pos: pos + CHUNK_WORDS]).strip()
+                    if segment:
+                        chunks.append({
+                            "page_number": page_num,
+                            "chunk_index": idx,
+                            "content":     segment,
+                        })
+                        idx += 1
+                    if pos + CHUNK_WORDS >= len(words):
+                        break
+                    pos += CHUNK_WORDS - OVERLAP_WORDS
 
     return chunks
 
 
 # ── Milvus vector store ───────────────────────────────────────────────────────
 
-class MilvusVectorStore:
-    """Thin wrapper around MilvusClient (Milvus Lite) for document chunks."""
+# Singleton client — keeps a single long-lived gRPC connection to the embedded
+# Milvus Lite server.  Creating a new MilvusClient per request causes
+# "too_many_pings" GOAWAY errors that silently drop search results.
+_milvus_client = None
 
-    def __init__(self):
+
+def _get_milvus_client():
+    """Return (and lazily create) the process-wide MilvusClient singleton."""
+    global _milvus_client
+    if _milvus_client is None:
         from pymilvus import MilvusClient
         import os
         db = settings.milvus_db_path
         os.makedirs(os.path.dirname(os.path.abspath(db)), exist_ok=True)
-        self.client = MilvusClient(db)
+        _milvus_client = MilvusClient(db)
+    return _milvus_client
+
+
+def _reset_milvus_client():
+    """Force-recreate the singleton (called after a gRPC disconnect)."""
+    global _milvus_client
+    _milvus_client = None
+
+
+class MilvusVectorStore:
+    """Thin wrapper around the singleton MilvusClient for document chunks."""
+
+    def __init__(self):
+        self.client = _get_milvus_client()
         self._ensure_collection()
 
     def _ensure_collection(self):
@@ -172,37 +245,51 @@ class MilvusVectorStore:
 
     # ── Read ──────────────────────────────────────────────────────────────────
 
+    def _do_search(self, query_embedding: List[float], limit: int) -> list:
+        """Raw search — may raise on gRPC disconnect."""
+        return self.client.search(
+            collection_name=COLLECTION,
+            data=[query_embedding],
+            limit=limit,
+            output_fields=["doc_id", "filename", "page_number",
+                           "chunk_index", "content"],
+        )
+
     def search(self, query_embedding: List[float],
                limit: int = 8, min_score: float = 0.30) -> List[Dict[str, Any]]:
-        """Return top-K chunks sorted by cosine similarity (descending)."""
+        """Return top-K chunks sorted by cosine similarity (descending).
+
+        Retries once after resetting the singleton client so a stale gRPC
+        connection (too_many_pings GOAWAY) does not silently return zero results.
+        """
         if not query_embedding:
             return []
-        try:
-            raw = self.client.search(
-                collection_name=COLLECTION,
-                data=[query_embedding],
-                limit=limit,
-                output_fields=["doc_id", "filename", "page_number",
-                                "chunk_index", "content"],
-            )
-            hits = []
-            for hit in raw[0]:
-                score = float(hit.get("distance", 0))
-                if score < min_score:
-                    continue
-                entity = hit.get("entity", {})
-                hits.append({
-                    "doc_id":       entity.get("doc_id", ""),
-                    "filename":     entity.get("filename", ""),
-                    "page_number":  entity.get("page_number", 1),
-                    "chunk_index":  entity.get("chunk_index", 0),
-                    "content":      entity.get("content", ""),
-                    "score":        round(score, 4),
-                })
-            return hits
-        except Exception as e:
-            print(f"[Milvus] Search error: {e}")
-            return []
+        for attempt in range(2):
+            try:
+                raw = self._do_search(query_embedding, limit)
+                hits = []
+                for hit in raw[0]:
+                    score = float(hit.get("distance", 0))
+                    if score < min_score:
+                        continue
+                    entity = hit.get("entity", {})
+                    hits.append({
+                        "doc_id":      entity.get("doc_id", ""),
+                        "filename":    entity.get("filename", ""),
+                        "page_number": entity.get("page_number", 1),
+                        "chunk_index": entity.get("chunk_index", 0),
+                        "content":     entity.get("content", ""),
+                        "score":       round(score, 4),
+                    })
+                return hits
+            except Exception as e:
+                if attempt == 0:
+                    print(f"[Milvus] Search error (will retry): {e}")
+                    _reset_milvus_client()
+                    self.client = _get_milvus_client()
+                else:
+                    print(f"[Milvus] Search failed after retry: {e}")
+        return []
 
     def get_adjacent_chunks(self, doc_id: str, chunk_index: int,
                             window: int = 1) -> List[Dict[str, Any]]:

@@ -9,13 +9,17 @@ class SearchEngine:
 
     def index_document(self, doc_id: str, content: str, metadata: Dict[str, Any]):
         """Index a document in Elasticsearch"""
+        # Use None (not '') for optional fields so Pydantic Optional[datetime] validation
+        # does not fail when results are deserialised back in main.py.
+        author = metadata.get('author') or None
+        creation_date = metadata.get('creation_date') or None
         doc = {
             'content': content,
             'filename': metadata.get('filename', ''),
             'file_path': metadata.get('file_path', ''),
             'file_type': metadata.get('file_type', ''),
-            'author': metadata.get('author', ''),
-            'creation_date': metadata.get('creation_date', ''),
+            'author': author,
+            'creation_date': creation_date,
             'language': metadata.get('language', 'en'),
             'page_count': metadata.get('page_count', 1),
             'category': metadata.get('category', '')
@@ -72,7 +76,7 @@ class SearchEngine:
                 'filename': hit['_source']['filename'],
                 'file_path': hit['_source']['file_path'],
                 'file_type': hit['_source']['file_type'],
-                'snippet': hit.get('highlight', {}).get('content', [''])[0][:200] + '...',
+                'snippet': (hit.get('highlight', {}).get('content', [''])[0][:200] + '...') if hit.get('highlight', {}).get('content') else '',
                 'author': hit['_source'].get('author'),
                 'creation_date': hit['_source'].get('creation_date'),
                 'page_count': hit['_source'].get('page_count')

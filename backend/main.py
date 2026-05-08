@@ -367,7 +367,7 @@ async def upload_document(
     category: str = Form(None),
     current_user: User = Depends(require_admin),
 ):
-    allowed_exts = ('.pdf', '.png', '.jpeg', '.jpg', '.doc', '.docx', '.xls', '.xlsx', '.csv')
+    allowed_exts = ('.pdf', '.png', '.jpeg', '.jpg', '.doc', '.docx', '.xls', '.xlsx', '.csv', '.txt', '.md')
     if not file.filename.lower().endswith(allowed_exts):
         raise HTTPException(status_code=400, detail="Unsupported file format")
 
@@ -439,7 +439,7 @@ def process_uploaded_file(file_path: str, original_filename: str, category: str 
                     print(f"Duplicate skipped: {original_filename}")
                 return
 
-            text = processor.extract_text(file_path)
+            text = processor.extract_as_markdown(file_path)
             metadata = processor.extract_metadata(file_path)
 
             doc = Document(
@@ -468,7 +468,7 @@ def process_uploaded_file(file_path: str, original_filename: str, category: str 
             search_metadata = {
                 'filename': original_filename,
                 'file_path': file_path,
-                'file_type': "application/pdf",
+                'file_type': f"application/{file_ext}",
                 'author': metadata.get('author'),
                 'creation_date': metadata.get('creation_date'),
                 'language': metadata.get('language', 'en'),
@@ -721,13 +721,15 @@ def process_scan(directory: str):
     processor = DocumentProcessor()
     search_engine = SearchEngine()
     db: Session = SessionLocal()
+    # Track newly added (doc_id, filename, text) for vector indexing after commit
+    newly_added: list = []
     try:
         for file_info in files:
             existing = db.query(Document).filter_by(file_hash=file_info.file_hash).first()
             if existing:
                 continue
 
-            text = processor.extract_text(file_info.path)
+            text = processor.extract_as_markdown(file_info.path)
             metadata = processor.extract_metadata(file_info.path)
 
             doc = Document(
@@ -766,7 +768,16 @@ def process_scan(directory: str):
             except Exception:
                 pass
 
+            # Collect for vector indexing after the DB commit
+            newly_added.append((str(doc.id), file_info.filename, text))
+
         db.commit()
+
+        # Vector-index only the newly added documents (best-effort)
+        for doc_id, filename, text in newly_added:
+            if text:
+                _embed_and_store(doc_id, filename, text)
+
     except Exception as e:
         db.rollback()
         print(f"Scan error: {e}")
@@ -864,17 +875,18 @@ def _reextract_all_task():
     search_engine = SearchEngine()
     db: Session = SessionLocal()
     updated = 0
+    reembedded: list = []   # collect (doc_id, filename, content) for Milvus rebuild
     try:
         docs = db.query(Document).all()
         for doc in docs:
             if not doc.file_path or not os.path.exists(doc.file_path):
+                print(f"Skipped (file missing): {doc.filename}")
                 continue
             try:
-                new_content = processor.extract_text_with_pages(doc.file_path)
+                new_content = processor.extract_as_markdown(doc.file_path)
                 doc.content = new_content
                 db.flush()
 
-                # Re-index in ES
                 meta = db.query(Metadata).filter_by(document_id=doc.id).first()
                 try:
                     search_engine.index_document(
@@ -893,6 +905,7 @@ def _reextract_all_task():
                 except Exception as es_err:
                     print(f"ES re-index failed for {doc.filename}: {es_err}")
 
+                reembedded.append((str(doc.id), doc.filename, new_content))
                 updated += 1
                 print(f"Re-extracted: {doc.filename} ({len(new_content)} chars)")
             except Exception as e:
@@ -903,8 +916,13 @@ def _reextract_all_task():
     except Exception as e:
         db.rollback()
         print(f"Re-extraction task error: {e}")
+        reembedded = []
     finally:
         db.close()
+
+    # Rebuild Milvus vectors with the new markdown-aware chunks
+    for doc_id, filename, content in reembedded:
+        _embed_and_store(doc_id, filename, content)
 
 
 # ── RAG Chatbot endpoint ──────────────────────────────────────────────────────
@@ -939,7 +957,7 @@ async def rag_chat(
             query_emb = get_embedding(query)
             if query_emb:
                 vs = MilvusVectorStore()
-                semantic_hits = vs.search(query_emb, limit=12, min_score=0.35)
+                semantic_hits = vs.search(query_emb, limit=10, min_score=0.40)
 
                 # Expand context: fetch adjacent chunks (±1) for top 4 hits
                 seen_pairs: set = {(h["doc_id"], h["chunk_index"]) for h in semantic_hits}
@@ -1047,18 +1065,25 @@ async def rag_chat(
 
         # ── Build prompt and call LLM ─────────────────────────────────────────
         SYSTEM = (
-            "You are Docunova, a precise document assistant.\n"
-            "Rules (follow strictly):\n"
-            "1. Base your answer SOLELY on the document excerpts provided — "
-            "never use external knowledge.\n"
-            "2. Always cite sources using the format: "
-            "(Document: <filename>, Page <N>).\n"
-            "3. When accuracy matters (definitions, numbers, dates, names), "
-            "quote the relevant passage verbatim before paraphrasing.\n"
-            "4. If the answer spans multiple documents, synthesize and cite each one.\n"
-            "5. If the excerpts do not contain sufficient information, respond exactly: "
-            "'I could not find this in the uploaded documents.' — do not speculate.\n"
-            "6. Answer the question directly and concisely, then provide citations."
+            "You are Docunova, an expert document question-answering assistant.\n\n"
+            "STRICT RULES — follow every one without exception:\n"
+            "1. Answer ONLY from the document excerpts provided below. "
+            "Never use outside knowledge or assumptions.\n"
+            "2. First identify the single most relevant excerpt. "
+            "Quote the key sentence or clause verbatim (in quotation marks), "
+            "then explain it in plain language.\n"
+            "3. Cite EVERY factual claim immediately after it: "
+            "(Source: <filename>, Page <N>).\n"
+            "4. For procedural or regulatory questions, list each step or rule "
+            "as a numbered point with its citation.\n"
+            "5. If multiple documents are relevant, cover each one separately "
+            "with its own heading and citations.\n"
+            "6. If the excerpts do not contain enough information to answer "
+            "the question, say exactly: "
+            "'I could not find this in the uploaded documents.' "
+            "Do NOT guess, infer, or use general knowledge.\n"
+            "7. Be thorough — do not truncate your answer. "
+            "Cover all relevant points found in the excerpts."
         )
 
         if is_greeting:
@@ -1076,12 +1101,16 @@ async def rag_chat(
         else:
             context_text = "\n---\n".join(context_parts)
             user_msg = (
-                f"Document excerpts:\n\n{context_text}\n\n"
-                f"---\nQuestion: {query}\n\n"
-                "Answer using only the excerpts above. "
-                "Quote key passages and cite each source (Document: <filename>, Page <N>)."
+                f"DOCUMENT EXCERPTS:\n\n{context_text}\n\n"
+                f"{'=' * 60}\n"
+                f"QUESTION: {query}\n\n"
+                "Instructions:\n"
+                "- Find the most relevant passage and quote it first.\n"
+                "- Answer the question fully using only the excerpts above.\n"
+                "- Cite every fact as (Source: <filename>, Page <N>).\n"
+                "- If nothing in the excerpts answers the question, say so."
             )
-            ai_response = _call_ollama(SYSTEM, user_msg, max_tokens=800)
+            ai_response = _call_ollama(SYSTEM, user_msg, max_tokens=1200)
             if not ai_response:
                 # Ollama unavailable — show raw excerpt
                 src = sources_info[0] if sources_info else {}

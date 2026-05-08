@@ -1,34 +1,98 @@
-INFO:     Started server process [7783]
+INFO:     Started server process [201471]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     127.0.0.1:49602 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49604 - "POST /api/auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44516 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60480 - "POST /api/auth/login HTTP/1.1" 200 OK
 /home/ashok/anaconda3/lib/python3.13/site-packages/milvus_lite/__init__.py:15: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import DistributionNotFound, get_distribution
-INFO:     127.0.0.1:44532 - "POST /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56408 - "POST /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48222 - "POST /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50650 - "POST /api/chat/rag HTTP/1.1" 200 OK
-I0508 10:03:20.549865    8740 chttp2_transport.cc:1369] unix:/tmp/tmplda7jua0_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {http2_error:11, grpc_status:14}
-E0508 10:03:20.549954    8740 chttp2_transport.cc:1401] unix:/tmp/tmplda7jua0_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
-INFO:     127.0.0.1:60330 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60346 - "GET /api/auth/me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46764 - "GET /api/auth/me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46764 - "GET /api/auth/me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46764 - "GET /api/auth/me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46764 - "GET /api/auth/me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46764 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46768 - "POST /api/auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50092 - "POST /api/auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40090 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40104 - "POST /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40950 - "POST /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40090 - "POST /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41058 - "POST /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42550 - "OPTIONS /api/search HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42552 - "POST /api/search HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53120 - "POST /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55846 - "POST /api/chat/rag HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35602 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60482 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46064 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46076 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46086 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46086 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46086 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46086 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53188 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53196 - "POST /api/admin/reextract HTTP/1.1" 200 OK
+Re-extracted: MobileTowerLatest.pdf (5353 chars)
+Re-extracted: FInal_GFR_upto_31_07_2024.pdf (507685 chars)
+Re-extracted: CantonmentAct2006-1.pdf (412406 chars)
+Re-extraction complete: 3 documents updated
+[Vector] Stored 6/6 chunks for: MobileTowerLatest.pdf
+INFO:     127.0.0.1:43644 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43644 - "GET /api/auth/me HTTP/1.1" 200 OK
+I0508 12:44:28.972248  201897 chttp2_transport.cc:1369] unix:/tmp/tmp8ar0uqrq_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0508 12:44:28.972284  201897 chttp2_transport.cc:1401] unix:/tmp/tmp8ar0uqrq_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+[Vector] Stored 1063/1063 chunks for: FInal_GFR_upto_31_07_2024.pdf
+INFO:     127.0.0.1:53198 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53208 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37846 - "OPTIONS /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37848 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47620 - "OPTIONS /api/documents/3ca1f9df-c73a-4b1f-8d7d-1adcd481a8dc/file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47620 - "GET /api/documents/3ca1f9df-c73a-4b1f-8d7d-1adcd481a8dc/file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58966 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58966 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58982 - "OPTIONS /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58994 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58994 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55020 - "OPTIONS /api/documents/6efd62da-4acc-405e-9a83-ce5fddb94a34/file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55032 - "GET /api/documents/6efd62da-4acc-405e-9a83-ce5fddb94a34/file HTTP/1.1" 200 OK
+I0508 12:47:22.315436  201903 chttp2_transport.cc:1369] unix:/tmp/tmp8ar0uqrq_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0508 12:47:22.315474  201903 chttp2_transport.cc:1401] unix:/tmp/tmp8ar0uqrq_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+[Vector] Stored 589/589 chunks for: CantonmentAct2006-1.pdf
+INFO:     127.0.0.1:34516 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34518 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33152 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39388 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39394 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54596 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36774 - "OPTIONS /api/documents/6efd62da-4acc-405e-9a83-ce5fddb94a34/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36776 - "GET /api/documents/6efd62da-4acc-405e-9a83-ce5fddb94a34/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57696 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47786 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47786 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [201471]
+INFO:     Started server process [234538]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:36040 - "POST /api/auth/login HTTP/1.1" 200 OK
+/home/ashok/anaconda3/lib/python3.13/site-packages/milvus_lite/__init__.py:15: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import DistributionNotFound, get_distribution
+INFO:     127.0.0.1:36046 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36324 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57684 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57694 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57694 - "GET /api/auth/me HTTP/1.1" 200 OK
+I0508 12:54:14.116009  234983 chttp2_transport.cc:1369] unix:/tmp/tmp_o3_vx2y_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {http2_error:11, grpc_status:14}
+E0508 12:54:14.116118  234983 chttp2_transport.cc:1401] unix:/tmp/tmp_o3_vx2y_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 10000ms
+INFO:     127.0.0.1:53952 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52604 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52614 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44918 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44932 - "POST /api/chat/rag HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:44148 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44152 - "POST /api/chat/rag HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:46760 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58548 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41766 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41768 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41778 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41778 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41778 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41778 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41778 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41778 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39216 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39216 - "GET /api/auth/me HTTP/1.1" 200 OK
+I0508 12:58:51.508439  234980 chttp2_transport.cc:1369] unix:/tmp/tmp_o3_vx2y_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0508 12:58:51.508540  234980 chttp2_transport.cc:1401] unix:/tmp/tmp_o3_vx2y_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 20000ms
+INFO:     127.0.0.1:38846 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38854 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42596 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42598 - "POST /api/chat/rag HTTP/1.1" 200 OK
+I0508 13:02:46.279864  234975 chttp2_transport.cc:1369] unix:/tmp/tmp_o3_vx2y_milvus_kush.db.sock: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {http2_error:11, grpc_status:14}
+E0508 13:02:46.279990  234975 chttp2_transport.cc:1401] unix:/tmp/tmp_o3_vx2y_milvus_kush.db.sock: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 40000ms
