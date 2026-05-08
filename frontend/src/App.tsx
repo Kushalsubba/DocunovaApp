@@ -9,7 +9,7 @@ interface UserInfo {
   role: 'admin' | 'user';
 }
 
-const API = 'http://localhost:8001';
+const API = import.meta.env.VITE_API_URL ?? 'http://localhost:8001';
 
 function App() {
   const [user, setUser] = useState<UserInfo | null>(null);

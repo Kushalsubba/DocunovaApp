@@ -2,7 +2,7 @@ import { useState, useEffect, FormEvent } from 'react';
 import { AdminDocumentsPanel } from './AdminDocumentsPanel';
 import { UserChatBot } from './UserChatBot';
 
-const API = 'http://localhost:8001';
+const API = import.meta.env.VITE_API_URL ?? 'http://localhost:8001';
 
 interface UserInfo {
   id: string;

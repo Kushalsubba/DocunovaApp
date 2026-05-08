@@ -11,7 +11,7 @@ interface Props {
   onLogin: (user: UserInfo, token: string) => void;
 }
 
-const API = 'http://localhost:8001';
+const API = import.meta.env.VITE_API_URL ?? 'http://localhost:8001';
 
 export function LoginPage({ onLogin }: Props) {
   const [username, setUsername] = useState('');

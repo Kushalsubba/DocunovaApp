@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-const API = 'http://localhost:8001';
+const API = import.meta.env.VITE_API_URL ?? 'http://localhost:8001';
 
 const CATEGORIES = ['Policies', 'Rules', 'Memorandum', 'Letters', 'Excel Files', 'Word Files'];
 

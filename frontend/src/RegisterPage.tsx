@@ -5,7 +5,7 @@ interface Props {
   onSuccess: () => void;
 }
 
-const API = 'http://localhost:8001';
+const API = import.meta.env.VITE_API_URL ?? 'http://localhost:8001';
 
 export function RegisterPage({ onGoLogin, onSuccess }: Props) {
   const [username, setUsername] = useState('');
