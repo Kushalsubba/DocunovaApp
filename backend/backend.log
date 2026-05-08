@@ -21,3 +21,14 @@ INFO:     127.0.0.1:46764 - "GET /api/auth/me HTTP/1.1" 200 OK
 INFO:     127.0.0.1:46764 - "GET /api/auth/me HTTP/1.1" 200 OK
 INFO:     127.0.0.1:46764 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
 INFO:     127.0.0.1:46768 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50092 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40090 - "OPTIONS /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40104 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40950 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40090 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41058 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42550 - "OPTIONS /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42552 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53120 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55846 - "POST /api/chat/rag HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35602 - "POST /api/chat/rag HTTP/1.1" 200 OK
